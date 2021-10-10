@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>「{{ vote.words }}」と近い発言</h2>
+
+<div class="vote-date">
+    検索日：{{ vote.created_at|date:"DATETIME_FORMAT" }} 
+</div>
+<table class="table">
+    <thread>
+        <tr>
+            <th>ランキング</th>
+            <th>発言者</th>
+            <th>発言</th>
+            <th>アジェンダとの類似度</th>
+        </tr>
+    </thread>
+    <tbody>
+    {% for index, row in df.iterrows %}
+    <tr>
+        <th>{{ index|add:"1"}}</th>
+        <th>{{ row.name }}</th>
+        <th>{{ row.text }}</th>
+        <th>{{ row.words_similarity }}%</th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
