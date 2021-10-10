@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block main %}
+<h1>Vote</h1>
+<p>あなたが興味のあることを入力して候補者の近い発言を見てみましょう</p>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Search" %}
+</form>
+{% endblock %}
