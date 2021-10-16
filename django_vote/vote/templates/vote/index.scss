@@ -1,0 +1,392 @@
+/* トップページのメインコンテンツエリアのSCSS */
+
+/* キャッチフレーズエリア内で使用する変数 */
+$catchphrase-area-background-color: lightskyblue;
+$startup-button-backgrounnd-color: dodgerblue;
+
+/* サイトHOWTOエリア内で使用する変数 */
+$site-howto-area-background-color: whitesmoke;
+
+/* Lets startエリア内で使用する変数 */
+$lets-start-area-background-color: whitesmoke;
+
+
+/* アニメーション定義 */
+@keyframes slideLeft {
+    0% {
+        visibility: visible;
+        opacity: 0;
+        transform: translateX(25px);
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+
+@keyframes slideRight {
+    0% {
+        visibility: visible;
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+
+@keyframes zoomIn {
+    0% {
+        visibility: visible;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+
+/* メインコンテンツエリア */
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+
+    /* キャッチフレーズエリア */
+    .catchphrase-area {
+        background-color: $catchphrase-area-background-color;
+        padding-top: 200px;
+        padding-bottom: 100px;
+
+        @media screen and (max-width: 599px) {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .catchphrase-content {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+
+            h1 {
+                color: white;
+                font-size: 60px;
+                text-decoration: underline;
+                letter-spacing: 5px;
+                margin-bottom: 100px;
+
+                @media screen and (max-width: 599px) {
+                    font-size: 30px;
+                    letter-spacing: 2.5px;
+                    margin-bottom: 50px;
+                }
+            }
+
+            p {
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-size: 30px;
+                margin-bottom: 80px;
+
+
+                @media screen and (max-width: 599px) {
+                    font-size: 15px;
+                    margin-bottom: 40px;
+                }
+                
+                .fa-check-circle {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+
+                span {
+                    display: inline-block;
+                    text-align: left;
+                }
+            }
+        }
+
+        .catchphrase-image {
+            width: 30%;
+            display: block;
+            margin: 100px auto 100px;
+
+            @media screen and (max-width: 599px) {
+                width: 50%;
+                margin: 50px auto 50px;
+            }
+        }
+
+        .startup-button {
+            display: block;
+            position: relative;
+            background-color: $startup-button-backgrounnd-color;
+            width: 120px;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            padding: 15px 50px;
+            border-radius: 40px;
+            transition: all 1s ease;
+
+            &:hover {
+                background-color: #3399ff;
+                .right-arrow {
+                    left: 180px;
+                }
+            }
+
+            .right-arrow {
+                display: inline-block;
+                position: absolute;
+                top: 5px;
+                left: 160px;
+                background-color: #3399ff;
+                padding: 10px;
+                border-radius: 50%;
+                transition: all 1s ease;
+
+            }
+
+
+        }
+
+    }
+
+
+    /* サイトHOWTOエリア */
+    .site-howto-area {
+        width: 100%;
+        padding-top: 150px;
+        background-color: $site-howto-area-background-color;
+
+        @media screen and (max-width: 599px) {
+            padding-top: 75px;
+        }
+
+        h2 {
+            width: 100%;
+            color: deepskyblue;
+            font-size: 45px;
+            text-align: center;
+
+            @media screen and (max-width: 599px) {
+                font-size: 30px;
+            }
+        }
+
+        .howto-step-area {
+            display: flex;
+            justify-content: space-evenly;
+            width: 90%;
+            margin: 100px auto 0;
+            position: relative;
+
+            @media screen and (max-width: 599px) {
+                flex-direction: column;
+                margin: 50px auto 0;
+            }
+
+            .howto-step {
+                width: 25%;
+                background-color: white;
+                border: 1px solid gainsboro;
+                box-shadow: 3px 3px 0px #cccccc;
+                position: relative;
+
+                @media screen and (max-width: 599px) {
+                    width: 100%;
+                    background-color: lightskyblue;
+                }
+
+                span {
+                    color: #222299;
+                    font-size: 20px;
+                    font-weight: bold;
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    transform: translateY(0%) translateX(-50%);
+
+                    @media screen and (max-width: 599px) {
+                        color: white;
+                        font-size: 18px;
+                        top: 10px;
+                    }
+                }
+                
+                h3 {
+                    visibility: hidden;
+                    color: #222299;
+                    font-size: 20px;
+                    text-align: center;
+                    margin-top: 40px;
+
+                    @media screen and (max-width: 599px) {
+                        color: white;
+                        font-size: 18px;
+                    }
+                }
+
+                h3.step1.is-animated {
+                    animation: slideLeft 1.5s ease 0s forwards;
+                }
+
+                h3.step2.is-animated {
+                    animation: slideLeft 1.5s ease 0.5s forwards;
+
+                    @media screen and (max-width: 599px) {
+                        animation: slideLeft 1.5s ease 0s forwards;
+                    }
+
+                }
+
+                h3.step3.is-animated {
+                    animation: slideLeft 1.5s ease 1s forwards;
+
+                    @media screen and (max-width: 599px) {
+                        animation: slideLeft 1.5s ease 0s forwards;
+                    }
+
+                }
+
+                .howto-image {
+                    width: 60%;
+                    height: 60%;
+                    margin: 30px auto;
+
+                    @media screen and (max-width: 599px) {
+                        width: 45%;
+                        height: 45%;
+                        margin: 15px auto;
+                    }
+
+                    img {
+                        width: 100%;
+                        visibility: hidden;
+                    }
+
+                    img.step1.is-animated {
+                        width: 100%;
+                        animation: zoomIn 1.5s ease 0s forwards;
+                    }
+
+                    img.step2.is-animated {
+                        width: 100%;
+                        animation: zoomIn 1.5s ease 0.5s forwards;
+
+                        @media screen and (max-width: 599px) {
+                            animation: zoomIn 1.5s ease 0s forwards;
+                        }
+                    }
+
+                    img.step3.is-animated {
+                        width: 100%;
+                        animation: zoomIn 1.5s ease 1s forwards;
+                        @media screen and (max-width: 599px) {
+                            animation: zoomIn 1.5s ease 0s forwards;
+                        }
+                    }
+                }
+            }
+
+            .arrow-area {
+                width: 10%;
+                position: relative;
+
+                @media screen and (max-width: 599px) {
+                    width: 100%;
+                    margin: 5vmax auto;
+                    text-align: center;
+
+                }
+
+                i.fa-arrow-alt-circle-right {
+                    color: deepskyblue;
+                    font-size: 5vmax;
+                    margin: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+
+                    @media screen and (max-width: 599px) {
+                        transform: translateY(-50%) translateX(-50%) rotate(90deg); 
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+    }
+
+    /* Let's start エリア */
+    .lets-start-area {
+        width: 100%;
+        padding: 100px 0;
+        background-color: $lets-start-area-background-color;
+
+        @media screen and (max-width: 599px) {
+            padding: 50px 0;
+        }
+
+        .lets-start {
+            text-align: center;
+
+            h3 {
+                margin-top: 20px;
+                margin-bottom: 30px;
+                font-size: 30px;
+
+                @media screen and (max-width: 599px) {
+                    margin-top: 10px;
+                    margin-bottom: 15px;
+                    font-size: 25px;
+                }
+            }
+
+            .startup-button {
+                display: block;
+                position: relative;
+                background-color: $startup-button-backgrounnd-color;
+                width: 120px;
+                font-size: 20px;
+                text-align: center;
+                color: white;
+                margin: 0 auto;
+                padding: 15px 50px;
+                border-radius: 40px;
+                transition: all 1s ease;
+
+                &:hover {
+                    background-color: #3399ff;
+                    .right-arrow {
+                        left: 180px;
+                    }
+                }
+
+                .right-arrow {
+                    display: inline-block;
+                    position: absolute;
+                    top: 5px;
+                    left: 160px;
+                    background-color: #3399ff;
+                    padding: 10px;
+                    border-radius: 50%;
+                    transition: all 1s ease;
+
+                }
+            }
+        }
+    }
+}
