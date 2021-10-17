@@ -110,7 +110,6 @@
 .main-content-area .catchphrase-area .catchphrase-content {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
 }
 .main-content-area .catchphrase-area .catchphrase-content h1 {
   color: white;
@@ -118,6 +117,7 @@
   text-decoration: underline;
   letter-spacing: 5px;
   margin-bottom: 100px;
+  text-align: center;
 }
 @media screen and (max-width: 599px) {
   .main-content-area .catchphrase-area .catchphrase-content h1 {
