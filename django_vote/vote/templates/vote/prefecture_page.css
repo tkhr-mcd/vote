@@ -20,12 +20,12 @@ body {
     padding: 10vh 0;
 }
 
-.main-content-area .progress-area {
+.main-content-area .progressbar-area {
     position: relative;
     width: 100%;
 }
 
-.progress-area .progressbar {
+.progressbar-area .circle-item-area {
     display: flex;
     justify-content: space-between;
     width: 75%;
@@ -89,7 +89,8 @@ body {
     padding: 0 calc(25%/4);
 }
 
-@media screen and (max-width: 599px) {
+/* レスポンシブ for スマホ　*/
+@media screen and (max-width: 520px) {
     .main-content-area .step-description {
         display: flex;
         justify-content: space-between;
@@ -109,6 +110,8 @@ body {
     color: midnightblue;
 }
 
+
+/* style_map.css記述内容 */
 img {
 	vertical-align: bottom;
 } 
@@ -549,7 +552,8 @@ a:hover {
 	レスポンシブ
 
 ****************************************/
-@media screen and (max-width: 776px) {
+/* レスポンシブ for タブレット max-960px */
+@media screen and (max-width: 960px) {
     #japan-map {
         display: flex;
         width: 100%;
@@ -598,11 +602,12 @@ a:hover {
         height: calc(247px + 4.5em);
     }
 
-} /* レスポンシブ max-776px */
+} 
 
 
 
-@media screen and (max-width: 599px) {
+/* レスポンシブ for スマホ max-520px */
+@media screen and (max-width: 520px) {
     #japan-map {
         display: block;
         width: 100%;

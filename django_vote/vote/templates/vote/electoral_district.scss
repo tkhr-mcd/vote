@@ -1,0 +1,163 @@
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+    padding: 10vh 0;
+    min-height: 60vh;
+
+    /* 画面上部の進捗バー描画エリア */
+    .progressbar-area {
+        position: relative;
+        width: 100%;
+
+        /* 進捗バーのサークル描画エリア */
+        .circle-item-area {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            margin: 0 auto;
+
+            /* 進捗バーのサークル */
+            .circle-item {
+                display:block;
+                width: 6%;
+                color: darkgray;
+                background-color: #cccccc;
+                border-radius: 50%;
+
+                div {
+                    position: relative;
+                    padding-top: 100%;
+                    height: 0;
+
+                    p {
+                        position: absolute;
+                        top: calc((100% - 1em)/2);
+                        right: 0;
+                        left: 0;
+                        margin: 0;
+                        text-align: center;
+                    }
+                }
+            }
+
+            /* 進捗バーのサークル(現在のステップ時適用) */
+            .circle-item.selected {
+                background-color: deepskyblue;
+                color: white;
+            }
+
+        }
+
+        /* 進捗バーの水平線描画エリア */
+        .hr-area {
+            display: flex;
+
+            /* 進捗バーの水平線 */
+            hr {
+                display: block;
+                width: calc(75%/2);
+                margin: 0;
+                height: 3px;
+                background-color: #cccccc;
+                z-index: -1;
+                position: absolute;
+                top: 50%;
+            }
+
+            /* 左側の水平線 */
+            hr:nth-child(1){
+                background-color: deepskyblue;
+                left: calc(25%/2);
+            }
+
+            /* 右側の水平線 */
+            hr:nth-child(2) {
+                left: 50%;
+            }
+
+        }
+    }
+
+
+    /* 進捗バー下の各ステップ説明文エリア */
+    .step-description {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 50px;
+        padding: 0 calc(25%/4);
+
+        /* レスポンシブ対応(スマホ) */
+        @media screen and (max-width: 599px) {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 0;
+            padding: 0 calc(25%/4);
+        }
+
+        /* ステップ説明文 */
+        li {
+            display: inline-block;
+            color: darkgray;
+            font-size: 2vw;
+        }
+
+        /* ステップ1の説明文 */
+        li:nth-child(1) {
+            color: midnightblue;
+        }
+
+        /* ステップ2の説明文 */
+        li:nth-child(2) {
+            color: midnightblue;
+        }
+
+    }
+
+    .electoral-district-area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 75%;
+        margin: 20px auto 0;
+
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 0px;
+            width: 22.5%;
+            background-color: dodgerblue;
+            color: white;
+            text-align: center;
+
+            /* レスポンシブ for タブレット */
+            @media screen and (max-width: 960px) {
+                width: 29%;
+            }
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+        }
+
+
+    }
+
+}
+
+
+
+
