@@ -106,7 +106,7 @@ body {
     font-size: 2vw;
 }
 
-.step-description li:nth-child(1) {
+.step-description li.selected {
     color: midnightblue;
 }
 

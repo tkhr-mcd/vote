@@ -102,10 +102,8 @@ main {
   padding: 0 calc(25%/4);
   /* レスポンシブ対応(スマホ) */
   /* ステップ説明文 */
-  /* ステップ1の説明文 */
-  /* ステップ2の説明文 */
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 520px) {
   .main-content-area .step-description {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -122,10 +120,7 @@ main {
   color: darkgray;
   font-size: 2vw;
 }
-.main-content-area .step-description li:nth-child(1) {
-  color: midnightblue;
-}
-.main-content-area .step-description li:nth-child(2) {
+.main-content-area .step-description li.selected {
   color: midnightblue;
 }
 .main-content-area .electoral-district-area {
