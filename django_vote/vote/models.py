@@ -9,28 +9,39 @@ class Vote(models.Model):
     def __str__(self):
         return self.words
 
-class Area(models.Model):
-    prefecture = models.CharField(max_length = 100)
-    constituency = models.CharField(max_length= 100)
-
-class Member(models.Model):
-    member_id = models.AutoField(primary_key = True)
-    name = models.CharField(max_length= 100)
-    constituency = models.CharField(max_length= 100)
-    twitter_id = models.CharField(max_length= 100)
-
 class Comment(models.Model):
-    member_id = models.IntegerField(null = False, blank= False)
-    sentence_id = models.IntegerField(null = True, blank= True)
-    sentence = models.TextField()
-    comment_id = models.IntegerField(null = True, blank= True)
-    comment = models.TextField()
-    comment_datetime = models.DateTimeField()
+    member_id = models.IntegerField(primary_key=True)
+    sentence_id = models.IntegerField(blank=True, null=True)
+    sentence = models.TextField(blank=True, null=True)
+    comment_id = models.IntegerField(blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    comment_date = models.DateField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'comment'
 
 class Image(models.Model):
-    image_id = models.AutoField(primary_key = True)
-    image = models.ImageField(upload_to = '')
-    comment_id = models.IntegerField(null = True, blank= True)
+    image_id = models.IntegerField(blank=True, null=True)
+    image_url = models.TextField(blank=True, null=True)
+    comment_id = models.IntegerField(primary_key=True)
+
+    class Meta:
+        managed = False
+        db_table = 'image'
+
+
+class Member(models.Model):
+    member_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=15, blank=True, null=True)
+    party = models.CharField(max_length=15, blank=True, null=True)
+    prefecture = models.CharField(max_length=15, blank=True, null=True)
+    constituency = models.IntegerField(blank=True, null=True)
+    twitter_id = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'member'
 
 class User(models.Model):
     user_id = models.AutoField(primary_key = True)
