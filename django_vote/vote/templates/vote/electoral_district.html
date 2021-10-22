@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- 各種メタ情報 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- ページタイトル -->
+        <title>選挙区選択</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="hand-peace-o.ico">
+        <!-- CSSファイル読み込み -->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="electoral_district.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+    </head>
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-content-area">
+                <div class="header-logo">
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <div class="main-content-area">
+                <!-- 進捗バー -->
+                <div class="progressbar-area">
+                    <ul class="circle-item-area">
+                        <li class="circle-item selected"><div><p>1</p></div></li>
+                        <li class="circle-item selected"><div><p>2</p></div></li>
+                        <li class="circle-item"><div><p>3</p></div></li>
+                    </ul>
+                    <div class="hr-area">
+                        <hr>
+                        <hr>
+                    </div>
+                </div>
+                <!-- 各ステップ説明文 -->
+                <ul class="step-description">
+                    <li class="step1-description selected">都道府県を選択</li>
+                    <li class="step2-description selected">選挙区を選択</li>
+                    <li class="step3-description">候補者を選択</li>
+                </ul>
+
+                <!-- 選挙区一覧 -->
+                <div class="electoral-district-area">
+                    <a href="{% url 'vote:' %}">第1区</a>
+                    <a href="{% url 'vote:' %}">第2区</a>
+                    <a href="{% url 'vote:' %}">第3区</a>
+                    <a href="{% url 'vote:' %}">第4区</a>
+                    <a href="{% url 'vote:' %}">第5区</a>
+                    <a href="{% url 'vote:' %}">第6区</a>
+                    <a href="{% url 'vote:' %}">第7区</a>
+
+                </div>
+
+
+            </div>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="footer-content-area">
+                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:' %}">お問い合わせ</a>
+                <a href="{% url 'vote:' %}">Twitter</a>
+            </div>
+
+        </footer>
+
+    <!-- JavaScriptファイル読み込み -->
+    <script src="animation.js"></script>
+    </body>
+</html>

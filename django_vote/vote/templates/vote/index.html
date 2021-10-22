@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- 各種メタ情報 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- ページタイトル -->
+        <title>Vote</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="hand-peace-o.ico">
+        <!-- CSSファイル読み込み -->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+    </head>
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-content-area">
+                <div class="header-logo">
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <div class="main-content-area">
+                <div class="catchphrase-area">
+
+                    <div class="catchphrase-content">
+                        <h1>What is Vote?</h1>
+                        <p><i class="far fa-check-circle"></i><span>Voteとは選挙会場にいるあなたの手助けをするアプリです</span></p>
+                        <p><i class="far fa-check-circle"></i><span>あなたの投票をよりスムーズに、より効率的に行えるようにサポートします</span></p>
+                    </div>
+
+                    <img class="catchphrase-image" src="vote_image.png">
+                    <a class="startup-button" href="{% url 'vote:' %}">はじめる<span class="right-arrow">→</span></a>
+
+                </div>
+                <div class="site-howto-area">
+                    <h2>HOW TO USE</h2>
+                    <div class="howto-step-area">
+                        <div class="howto-step">
+                            <span>STEP.1</span>
+                            <h3 class="step1 js-scrollAnimation">都道府県を選択</h3>
+                            <div class="howto-image">
+                                <img class="step1 js-scrollAnimation" src="prefecture.png">
+                            </div>
+                        </div>
+                        <div class="arrow-area">
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                        </div>
+                        <div class="howto-step">
+                            <span>STEP.2</span>
+                            <h3 class="step2 js-scrollAnimation">選挙区を選択</h3>
+                            <div class="howto-image">
+                                <img class="step2 js-scrollAnimation" src="electoral_area.png">
+                            </div>
+                        </div>
+                        <div class="arrow-area">
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                        </div>
+                        <div class="howto-step">
+                            <span>STEP.3</span>
+                            <h3 class="step3 js-scrollAnimation">候補者を選択</h3>
+                            <div class="howto-image">
+                                <img class="step3 js-scrollAnimation" src="politician.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lets-start-area">
+                    <div class="lets-start">
+                        <img class="fas fa-hand-peace" src="hand-peace-o.png">
+                        <h3>Let's start.</h3>
+                        <a class="startup-button" href="{% url 'vote:' %}">はじめる<span class="right-arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="footer-content-area">
+                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:' %}">お問い合わせ</a>
+                <a href="{% url 'vote:' %}">Twitter</a>
+            </div>
+
+        </footer>
+
+    <!-- JavaScriptファイル読み込み -->
+    <script src="animation.js"></script>
+    </body>
+</html>

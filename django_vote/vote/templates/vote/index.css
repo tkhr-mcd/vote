@@ -1,0 +1,430 @@
+@charset "UTF-8";
+/* トップページのメインコンテンツエリアのSCSS */
+/* キャッチフレーズエリア内で使用する変数 */
+/* サイトHOWTOエリア内で使用する変数 */
+/* Lets startエリア内で使用する変数 */
+/* アニメーション定義 */
+@-webkit-keyframes slideLeft {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translateX(25px);
+            transform: translateX(25px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/* メインコンテンツエリア */
+.main-content-area {
+  width: 100%;
+  margin-top: 75px;
+  /* キャッチフレーズエリア */
+  /* サイトHOWTOエリア */
+  /* Let's start エリア */
+}
+.main-content-area .catchphrase-area {
+  background-color: lightskyblue;
+  padding-top: 200px;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .catchphrase-area {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}
+.main-content-area .catchphrase-area .catchphrase-content {
+  width: 80%;
+  margin: 0 auto;
+}
+.main-content-area .catchphrase-area .catchphrase-content h1 {
+  color: white;
+  font-size: 60px;
+  text-decoration: underline;
+  letter-spacing: 5px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .catchphrase-area .catchphrase-content h1 {
+    font-size: 30px;
+    letter-spacing: 2.5px;
+    margin-bottom: 50px;
+  }
+}
+.main-content-area .catchphrase-area .catchphrase-content p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .catchphrase-area .catchphrase-content p {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+}
+.main-content-area .catchphrase-area .catchphrase-content p .fa-check-circle {
+  display: inline-block;
+  margin-right: 10px;
+}
+.main-content-area .catchphrase-area .catchphrase-content p span {
+  display: inline-block;
+  text-align: left;
+}
+.main-content-area .catchphrase-area .catchphrase-image {
+  width: 30%;
+  display: block;
+  margin: 100px auto 100px;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .catchphrase-area .catchphrase-image {
+    width: 50%;
+    margin: 50px auto 50px;
+  }
+}
+.main-content-area .catchphrase-area .startup-button {
+  display: block;
+  position: relative;
+  background-color: dodgerblue;
+  width: 120px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  padding: 15px 50px;
+  border-radius: 40px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.main-content-area .catchphrase-area .startup-button:hover {
+  background-color: #3399ff;
+}
+.main-content-area .catchphrase-area .startup-button:hover .right-arrow {
+  left: 180px;
+}
+.main-content-area .catchphrase-area .startup-button .right-arrow {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 160px;
+  background-color: #3399ff;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.main-content-area .site-howto-area {
+  width: 100%;
+  padding-top: 150px;
+  background-color: whitesmoke;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area {
+    padding-top: 75px;
+  }
+}
+.main-content-area .site-howto-area h2 {
+  width: 100%;
+  color: deepskyblue;
+  font-size: 45px;
+  text-align: center;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area h2 {
+    font-size: 30px;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
+  margin: 100px auto 0;
+  position: relative;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px auto 0;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step {
+  width: 25%;
+  background-color: white;
+  border: 1px solid gainsboro;
+  -webkit-box-shadow: 3px 3px 0px #cccccc;
+          box-shadow: 3px 3px 0px #cccccc;
+  position: relative;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step {
+    width: 100%;
+    background-color: lightskyblue;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step span {
+  color: #222299;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  -webkit-transform: translateY(0%) translateX(-50%);
+          transform: translateY(0%) translateX(-50%);
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step span {
+    color: white;
+    font-size: 18px;
+    top: 10px;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step h3 {
+  visibility: hidden;
+  color: #222299;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step h3 {
+    color: white;
+    font-size: 18px;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step h3.step1.is-animated {
+  -webkit-animation: slideLeft 1.5s ease 0s forwards;
+          animation: slideLeft 1.5s ease 0s forwards;
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step h3.step2.is-animated {
+  -webkit-animation: slideLeft 1.5s ease 0.5s forwards;
+          animation: slideLeft 1.5s ease 0.5s forwards;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step h3.step2.is-animated {
+    -webkit-animation: slideLeft 1.5s ease 0s forwards;
+            animation: slideLeft 1.5s ease 0s forwards;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step h3.step3.is-animated {
+  -webkit-animation: slideLeft 1.5s ease 1s forwards;
+          animation: slideLeft 1.5s ease 1s forwards;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step h3.step3.is-animated {
+    -webkit-animation: slideLeft 1.5s ease 0s forwards;
+            animation: slideLeft 1.5s ease 0s forwards;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step .howto-image {
+  width: 60%;
+  height: 60%;
+  margin: 30px auto;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step .howto-image {
+    width: 45%;
+    height: 45%;
+    margin: 15px auto;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img {
+  width: 100%;
+  visibility: hidden;
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img.step1.is-animated {
+  width: 100%;
+  -webkit-animation: zoomIn 1.5s ease 0s forwards;
+          animation: zoomIn 1.5s ease 0s forwards;
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img.step2.is-animated {
+  width: 100%;
+  -webkit-animation: zoomIn 1.5s ease 0.5s forwards;
+          animation: zoomIn 1.5s ease 0.5s forwards;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img.step2.is-animated {
+    -webkit-animation: zoomIn 1.5s ease 0s forwards;
+            animation: zoomIn 1.5s ease 0s forwards;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img.step3.is-animated {
+  width: 100%;
+  -webkit-animation: zoomIn 1.5s ease 1s forwards;
+          animation: zoomIn 1.5s ease 1s forwards;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .howto-step .howto-image img.step3.is-animated {
+    -webkit-animation: zoomIn 1.5s ease 0s forwards;
+            animation: zoomIn 1.5s ease 0s forwards;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .arrow-area {
+  width: 10%;
+  position: relative;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .arrow-area {
+    width: 100%;
+    margin: 5vmax auto;
+    text-align: center;
+  }
+}
+.main-content-area .site-howto-area .howto-step-area .arrow-area i.fa-arrow-alt-circle-right {
+  color: deepskyblue;
+  font-size: 5vmax;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .site-howto-area .howto-step-area .arrow-area i.fa-arrow-alt-circle-right {
+    -webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+            transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  }
+}
+.main-content-area .lets-start-area {
+  width: 100%;
+  padding: 100px 0;
+  background-color: whitesmoke;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .lets-start-area {
+    padding: 50px 0;
+  }
+}
+.main-content-area .lets-start-area .lets-start {
+  text-align: center;
+}
+.main-content-area .lets-start-area .lets-start h3 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+@media screen and (max-width: 599px) {
+  .main-content-area .lets-start-area .lets-start h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
+  }
+}
+.main-content-area .lets-start-area .lets-start .startup-button {
+  display: block;
+  position: relative;
+  background-color: dodgerblue;
+  width: 120px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  padding: 15px 50px;
+  border-radius: 40px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.main-content-area .lets-start-area .lets-start .startup-button:hover {
+  background-color: #3399ff;
+}
+.main-content-area .lets-start-area .lets-start .startup-button:hover .right-arrow {
+  left: 180px;
+}
+.main-content-area .lets-start-area .lets-start .startup-button .right-arrow {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 160px;
+  background-color: #3399ff;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
