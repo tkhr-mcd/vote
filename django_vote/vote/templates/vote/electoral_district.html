@@ -51,16 +51,31 @@
                 </ul>
 
                 <!-- 選挙区一覧 -->
+
+
+                <!-- <div class = 'container'>
+                    {% for item in object_list %}
+                    <div class="alert alert-success" role="alert">
+                       <p><a href="{% url 'vote:index' %}">第{{item.constituency}}区</a></p>
+                    </div>
+                    {% endfor %}
+                </div> -->
+                
                 <div class="electoral-district-area">
-                    <a href="{% url 'vote:' %}">第1区</a>
-                    <a href="{% url 'vote:' %}">第2区</a>
-                    <a href="{% url 'vote:' %}">第3区</a>
-                    <a href="{% url 'vote:' %}">第4区</a>
-                    <a href="{% url 'vote:' %}">第5区</a>
-                    <a href="{% url 'vote:' %}">第6区</a>
-                    <a href="{% url 'vote:' %}">第7区</a>
+                    {% for item in constituency_list %}
+                       <p><a href="{% url 'vote:candidate' prefecture=item.prefecture constituency=item.constituency %}">第{{item.constituency}}区</a></p>
+                    {% endfor %}
+
+                    <!-- <a href="{% url 'vote:index' %}">第1区</a>
+                    <a href="{% url 'vote:index' %}">第2区</a>
+                    <a href="{% url 'vote:index' %}">第3区</a>
+                    <a href="{% url 'vote:index' %}">第4区</a>
+                    <a href="{% url 'vote:index' %}">第5区</a>
+                    <a href="{% url 'vote:index' %}">第6区</a>
+                    <a href="{% url 'vote:index' %}">第7区</a> -->
 
                 </div>
+
 
 
             </div>
@@ -69,9 +84,9 @@
         <!-- フッター -->
         <footer>
             <div class="footer-content-area">
-                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
-                <a href="{% url 'vote:' %}">お問い合わせ</a>
-                <a href="{% url 'vote:' %}">Twitter</a>
+                <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:index' %}">お問い合わせ</a>
+                <a href="{% url 'vote:index' %}">Twitter</a>
             </div>
 
         </footer>
