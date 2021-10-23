@@ -42,9 +42,18 @@ class Member(models.Model):
     class Meta:
         managed = False
         db_table = 'member'
-
+        
 class User(models.Model):
     user_id = models.AutoField(primary_key = True)
     constituency = models.CharField(max_length= 100)
     query = models.TextField()
     search_datetime = DateTimeField(auto_now_add = True)
+
+class Area(models.Model):
+    area_id = models.IntegerField(primary_key=True)
+    prefecture = models.CharField(max_length=15, blank=True, null=True)
+    constituency = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'area'

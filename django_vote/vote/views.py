@@ -3,8 +3,26 @@ from django.http import HttpResponse
 from vote.models import Vote
 from vote.forms import VoteForm
 from ml.get_words_similarity import get_words_similarity
-import pandas as pd
-import numpy as np
+from .models import Member ,Area
+# import pandas as pd
+# import numpy as np
+
+
+def indexfunc(request):
+    return render(request, 'index.html')
+
+def areafunc(request):
+    object_list = Member.objects.all()
+    return render(request, 'prefecture_page.html',{'object_list':object_list})
+
+def constituencyfunc(request, prefecture):
+    constituency_list = Area.objects.filter(prefecture__contains = prefecture)
+    return render(request, 'electoral_district.html',{'constituency_list':constituency_list})
+
+def candidatefunc(request, prefecture, constituency):
+    candidate_list = Member.objects.filter(prefecture = prefecture, constituency = constituency)
+    return render(request, 'test.html',{'candidate_list':candidate_list})
+
 
 def vote_new(request):
     if request.method == 'POST':
@@ -26,3 +44,8 @@ def vote_detail(request, vote_id):
     
     return render(request, 'vote/vote_detail.html',
                     context)
+
+
+def testfunc(request):
+    object_list = Member.objects.all()
+    return render(request, 'test.html',{'object_list':object_list}) 
