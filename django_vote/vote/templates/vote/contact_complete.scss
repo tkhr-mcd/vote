@@ -1,0 +1,52 @@
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+main {
+    flex: 1;
+}
+
+/* メインコンテンツエリア */
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+
+    .contact-headline {
+        margin: 40px auto 20px;
+        width: 50%;
+        max-width: 800px;
+
+        /* レスポンシブ for タブレット */
+        @media screen and (max-width: 960px) {
+            width: 75%;
+        }
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            width: 100%;
+        }
+
+        p {
+            margin-top: 50px;
+            display: inline-block;
+            font-size: 20px;
+
+            /* レスポンシブ for タブレット */
+            @media screen and (max-width: 960px) {
+                font-size: 15px;
+            }
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                font-size: 15px;
+            }
+
+        }
+
+    }
+
+}

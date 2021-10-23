@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- 各種メタ情報 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- ページタイトル -->
+        <title>お問い合わせフォーム</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="hand-peace-o.ico">
+        <!-- CSSファイル読み込み -->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="contact_form.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+    </head>
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-content-area">
+                <div class="header-logo">
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <div class="main-content-area">
+                <div class="contact-headline">
+                    <h2>お問い合わせ</h2>
+                    <span>(<span style="color:red;">*</span>は必須入力)</span>
+                </div>
+                <div class="contact-form">
+                    <form method="POST" action="{% url 'vote:' %}">
+                        <div class="user-name">
+                            <div class="label">
+                                お名前
+                                <span style="color:red;">*</span>
+                            </div>
+                            <div class="contents">
+                                <input type="text" name="username" placeholder="お名前を入力" maxlength="255" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="e-mail">
+                            <div class="label">
+                                メールアドレス
+                                <span style="color:red;">*</span>
+                            </div>
+                            <div class="contents">
+                                <input type="email" name="email" placeholder="メールアドレスを入力" maxlength="255" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="subject">
+                            <div class="label">
+                                件名
+                                <span style="color:red;">*</span>
+                            </div>
+                            <div class="contents">
+                                <input type="text" name="subject" placeholder="件名を入力" maxlength="255" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="details">
+                            <div class="label">
+                                内容
+                                <span style="color:red;">*</span>
+                            </div>
+                            <div class="contents">
+                                <textarea name="details" required></textarea>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button type="submit">確認する</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="footer-content-area">
+                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:' %}">お問い合わせ</a>
+                <a href="{% url 'vote:' %}">Twitter</a>
+            </div>
+
+        </footer>
+
+    <!-- JavaScriptファイル読み込み -->
+    <script src="animation.js"></script>
+    </body>
+</html>

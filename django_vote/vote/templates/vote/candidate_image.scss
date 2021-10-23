@@ -1,0 +1,51 @@
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+main {
+    flex: 1;
+}
+
+/* メインコンテンツエリア */
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+    padding-top: 80px;
+
+    h3 {
+        width: 80%;
+        margin: 0 auto;
+        color: midnightblue;
+        font-size: 20px;
+        text-align: center;
+
+        i {
+            margin-left: 5px;
+        }
+    }
+    .candidate_image {
+        margin: 80px auto;
+        text-align: center;
+
+        img {
+            width: 50%;
+
+            /* レスポンシブ for タブレット */
+            @media screen and (max-width: 960px) {
+                width: 70%;
+            }
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                width: 100%;
+            }
+        }
+
+    }
+
+
+
+}

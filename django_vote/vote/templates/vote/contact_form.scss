@@ -1,0 +1,153 @@
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+main {
+    flex: 1;
+}
+
+/* メインコンテンツエリア */
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+
+    .contact-headline {
+        margin: 40px auto 20px;
+        width: 50%;
+        max-width: 800px;
+
+        /* レスポンシブ for タブレット */
+        @media screen and (max-width: 960px) {
+            width: 75%;
+        }
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 50px;
+            display: inline-block;
+            font-size: 25px;
+
+            /* レスポンシブ for タブレット */
+            @media screen and (max-width: 960px) {
+                font-size: 20px;
+            }
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                font-size: 15px;
+            }
+
+        }
+
+        span {
+            font-size: 18px;
+
+            /* レスポンシブ for タブレット and スマホ */
+            @media screen and (max-width: 960px) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .contact-form {
+        margin: 0 auto;
+        padding: 40px;
+        width: 50%;
+        max-width: 800px;
+        background-color: white;
+        box-sizing: border-box;
+
+        /* レスポンシブ for タブレット */
+        @media screen and (max-width: 960px) {
+            width: 75%;
+            font-size: 15px;
+        }
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            width: 95%;
+            font-size: 15px;
+        }
+
+        .user-name, .e-mail, .subject, .details {
+            display: flex;
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                flex-direction: column;
+            }
+
+
+            .label {
+                width: 30%;
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    width: 100%;
+                }
+            }
+            .contents {
+                width: 70%;
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    width: 100%;
+                }
+            }
+
+            input {
+                height: 30px;
+                width: 80%;
+                border: 1px solid gray;
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    width: 100%;
+                    margin-top: 5px;
+                }
+
+            }
+
+            textarea {
+                width: 90%;
+                height: 100px;
+                border: 1px solid gray;
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    width: 100%;
+                    margin-top: 5px;
+                }
+
+            }
+
+
+        }
+
+        .submit {
+            width: 100%;
+            text-align: center;
+
+            button {
+                display: inline-block;
+                margin-top: 40px;
+                padding: 10px 30px;
+                background-color: dodgerblue;
+                color: white;
+                border-radius: 10px;
+                border: none;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+        }
+
+
+    }
+}

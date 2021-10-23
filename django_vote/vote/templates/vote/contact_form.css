@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* メインコンテンツエリア */
+.main-content-area {
+  width: 100%;
+  margin-top: 75px;
+}
+.main-content-area .contact-headline {
+  margin: 40px auto 20px;
+  width: 50%;
+  max-width: 800px;
+  /* レスポンシブ for タブレット */
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 960px) {
+  .main-content-area .contact-headline {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-headline {
+    width: 100%;
+    text-align: center;
+  }
+}
+.main-content-area .contact-headline h2 {
+  margin-top: 50px;
+  display: inline-block;
+  font-size: 25px;
+  /* レスポンシブ for タブレット */
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 960px) {
+  .main-content-area .contact-headline h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-headline h2 {
+    font-size: 15px;
+  }
+}
+.main-content-area .contact-headline span {
+  font-size: 18px;
+  /* レスポンシブ for タブレット and スマホ */
+}
+@media screen and (max-width: 960px) {
+  .main-content-area .contact-headline span {
+    font-size: 13px;
+  }
+}
+.main-content-area .contact-form {
+  margin: 0 auto;
+  padding: 40px;
+  width: 50%;
+  max-width: 800px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* レスポンシブ for タブレット */
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 960px) {
+  .main-content-area .contact-form {
+    width: 75%;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form {
+    width: 95%;
+    font-size: 15px;
+  }
+}
+.main-content-area .contact-form .user-name, .main-content-area .contact-form .e-mail, .main-content-area .contact-form .subject, .main-content-area .contact-form .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form .user-name, .main-content-area .contact-form .e-mail, .main-content-area .contact-form .subject, .main-content-area .contact-form .details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.main-content-area .contact-form .user-name .label, .main-content-area .contact-form .e-mail .label, .main-content-area .contact-form .subject .label, .main-content-area .contact-form .details .label {
+  width: 30%;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form .user-name .label, .main-content-area .contact-form .e-mail .label, .main-content-area .contact-form .subject .label, .main-content-area .contact-form .details .label {
+    width: 100%;
+  }
+}
+.main-content-area .contact-form .user-name .contents, .main-content-area .contact-form .e-mail .contents, .main-content-area .contact-form .subject .contents, .main-content-area .contact-form .details .contents {
+  width: 70%;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form .user-name .contents, .main-content-area .contact-form .e-mail .contents, .main-content-area .contact-form .subject .contents, .main-content-area .contact-form .details .contents {
+    width: 100%;
+  }
+}
+.main-content-area .contact-form .user-name input, .main-content-area .contact-form .e-mail input, .main-content-area .contact-form .subject input, .main-content-area .contact-form .details input {
+  height: 30px;
+  width: 80%;
+  border: 1px solid gray;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form .user-name input, .main-content-area .contact-form .e-mail input, .main-content-area .contact-form .subject input, .main-content-area .contact-form .details input {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+.main-content-area .contact-form .user-name textarea, .main-content-area .contact-form .e-mail textarea, .main-content-area .contact-form .subject textarea, .main-content-area .contact-form .details textarea {
+  width: 90%;
+  height: 100px;
+  border: 1px solid gray;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .main-content-area .contact-form .user-name textarea, .main-content-area .contact-form .e-mail textarea, .main-content-area .contact-form .subject textarea, .main-content-area .contact-form .details textarea {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+.main-content-area .contact-form .submit {
+  width: 100%;
+  text-align: center;
+}
+.main-content-area .contact-form .submit button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 30px;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+.main-content-area .contact-form .submit button:hover {
+  opacity: 0.8;
+}

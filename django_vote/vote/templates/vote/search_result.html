@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- 各種メタ情報 -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="format-detection" content="telephone=no,address=no,email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- ページタイトル -->
+        <title>検索結果</title>
+        <!-- ファビコン -->
+        <link rel="icon" href="hand-peace-o.ico">
+        <!-- CSSファイル読み込み -->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="search_result.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+    </head>
+    <body>
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-content-area">
+                <div class="header-logo">
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <div class="main-content-area">
+                <!-- 進捗バーエリア -->
+                <div class="progressbar-area">
+                    <!-- 進捗バーのサークルエリア-->
+                    <ul class="circle-item-area">
+                        <li class="circle-item selected"><div><p>1</p></div></li>
+                        <li class="circle-item selected"><div><p>2</p></div></li>
+                        <li class="circle-item selected"><div><p>3</p></div></li>
+                    </ul>
+                    <!-- 進捗バーの水平線エリア-->
+                    <div class="hr-area">
+                        <hr>
+                        <hr>
+                    </div>
+                </div>
+                <!-- 各ステップ説明文エリア -->
+                <ul class="step-description">
+                    <li class="step1-description selected">都道府県を選択</li>
+                    <li class="step2-description selected">選挙区を選択</li>
+                    <li class="step3-description selected">候補者を選択</li>
+                </ul>
+
+                <!-- 検索フォームエリア -->
+                <div class="search-form-area">
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input class="keyword-search" type="text" name="keyword" size="25" placeholder="キーワード検索">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <!-- 人気トピック見出し -->
+                <h3 class="popular-topic-headline">人気トピック<i class="fas fa-chart-line"></i></h3>
+
+                <!-- 人気トピックエリア -->
+                <div class="popular-topics-area">
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="学費">学費<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="年金">年金<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="子育て">子育て<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="デジタルトランスフォーメーション">デジタルトランスフォーメーション<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="5G・IoT">5G・IoT<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="SDGs">SDGs<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="税金">税金<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="農業・産業">農業・産業<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="外国人労働者">外国人労働者<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="ベーシックインカム">ベーシックインカム<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="コロナ感染対策">コロナ感染対策<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="外交・安全保障">外交・安全保障<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="エネルギー政策">エネルギー政策<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="get" action="{% url 'vote:' %}">
+                        <input type="hidden" name="prefecture" value="{{ }}">
+                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <button class="popular-topic" type="submit" name="topic" value="社会保障">社会保障<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                
+                <!-- 関連候補者ランキング見出し -->
+                <h3 class="rel-candidate-ranking-headline">関連候補者ランキング<i class="fas fa-medal"></i></h3>
+                <!-- 関連候補者ランキングエリア -->
+                <div class="rel-candidate-ranking-area">
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>1位</span></p>
+                        <div class="person">
+                            <p class="political-party">NHKと裁判してる党弁護士法72条違反で</p>
+                            <p class="candidate-name">田中 健</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>2位</span></p>
+                        <div class="person">
+                            <p class="political-party">自民党</p>
+                            <p class="candidate-name">山田 みき</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>3位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">小野 たいすけ</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>4位</span></p>
+                        <div class="person">
+                            <p class="political-party">立憲民主党</p>
+                            <p class="candidate-name">海江田 万里</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>5位</span></p>
+                        <div class="person">
+                            <p class="political-party">無所属</p>
+                            <p class="candidate-name">ないとう ひさお</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                    <div class="rel-candidate" href="{% url 'vote:' %}">
+                        <p class="rank"><span>6位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentences">
+                            <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                            <a href="{% url 'vote: ' %}">『<span>XXXXXXXXXXXXX</span>』</a>
+                            <span>/</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 関連発言ランキング見出し -->
+                <h3 class="rel-sentence-ranking-headline">関連発言ランキング<i class="fas fa-trophy"></i></h3>
+                <!-- 関連発言ランキングエリア -->
+                <div class="rel-sentence-ranking-area">
+                    <div class="rel-sentence">
+                        <p class="rank"><span>1位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                    <div class="rel-sentence">
+                        <p class="rank"><span>2位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                    <div class="rel-sentence">
+                        <p class="rank"><span>3位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                    <div class="rel-sentence">
+                        <p class="rank"><span>4位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                    <div class="rel-sentence">
+                        <p class="rank"><span>5位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                    <div class="rel-sentence">
+                        <p class="rank"><span>6位</span></p>
+                        <div class="person">
+                            <p class="political-party">日本維新の会</p>
+                            <p class="candidate-name">かさたに 圭司</p>
+                        </div>
+                        <p class="sentence">
+                            <span>関連発言<i class="fas fa-comment-dots"></i></span><br>
+                            <a href="{% url 'vote: ' %}">
+                                『<span>XXXXXXXXXXXXX</span>』
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+
+        <!-- フッター -->
+        <footer>
+            <div class="footer-content-area">
+                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:' %}">お問い合わせ</a>
+                <a href="{% url 'vote:' %}">Twitter</a>
+            </div>
+
+        </footer>
+
+    <!-- JavaScriptファイル読み込み -->
+    <script src="animation.js"></script>
+    </body>
+</html>
