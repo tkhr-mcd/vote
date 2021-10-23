@@ -1,0 +1,400 @@
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+
+
+/* メインコンテンツエリア */
+.main-content-area {
+    width: 100%;
+    margin-top: 75px;
+    padding: 10vh 0;
+    min-height: 60vh;
+}
+
+/* 進捗バーエリア */
+.progressbar-area {
+    position: relative;
+    width: 100%;
+
+    /* 進捗バーのサークルエリア */
+    .circle-item-area {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        margin: 0 auto;
+
+        /* 進捗バーのサークル */
+        .circle-item {
+            display:block;
+            width: 6%;
+            color: darkgray;
+            background-color: #cccccc;
+            border-radius: 50%;
+
+            div {
+                position: relative;
+                padding-top: 100%;
+                height: 0;
+
+                p {
+                    position: absolute;
+                    top: calc((100% - 1em)/2);
+                    right: 0;
+                    left: 0;
+                    margin: 0;
+                    text-align: center;
+                }
+            }
+        }
+
+        /* 進捗バーのサークル(現在のステップ時適用) */
+        .circle-item.selected {
+            background-color: deepskyblue;
+            color: white;
+        }
+
+    }
+
+    /* 進捗バーの水平線エリア */
+    .hr-area {
+        display: flex;
+
+        /* 進捗バーの水平線 */
+        hr {
+            display: block;
+            width: calc(75%/2);
+            margin: 0;
+            height: 3px;
+            background-color: #cccccc;
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+        }
+
+        /* 左側の水平線 */
+        hr:nth-child(1){
+            background-color: deepskyblue;
+            left: calc(25%/2);
+        }
+
+        /* 右側の水平線 */
+        hr:nth-child(2) {
+            background-color: deepskyblue;
+            left: 50%;
+        }
+
+    }
+}
+
+
+/* 各ステップ説明文エリア */
+.step-description {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 80px;
+    padding: 0 calc(25%/4);
+
+    /* レスポンシブ for スマホ */
+    @media screen and (max-width: 520px) {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0 40px;
+        padding: 0 calc(25%/4);
+    }
+
+    /* ステップ説明文 */
+    li {
+        display: inline-block;
+        color: darkgray;
+        font-size: 2vw;
+    }
+
+    li.selected {
+        color: midnightblue;
+    }
+
+
+}
+
+
+/* 検索フォームエリア */
+.search-form-area {
+    width: 80%;
+    margin: 0 auto;
+
+    form {
+        margin: 0 auto 40px;
+        text-align: center;
+        position: relative;
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            margin: 0 auto 20px;
+        }
+
+        input.keyword-search {
+            width: 500px;
+            height: 40px;
+            border-radius: 30px;
+            border: 0.5px solid gray;
+            box-sizing: border-box;
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                width: 80%;
+                height: 30px;
+            }
+
+        }
+
+        button {
+            display: inline-block;
+            background-color: dodgerblue;
+            color: white;
+            width: 80px;
+            height: 40px;
+            border-radius: 0 30px 30px 0;
+            border: none;
+            position: absolute;
+            left: calc((80vw - 500px)/2 + 420px);
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                width: 40px;
+                height: 30px;
+                left: calc((80vw - 64vw)/2 + (64vw - 40px));
+            }
+
+
+        }
+
+    }
+
+}
+
+/* 人気トピック見出し */
+.popular-topic-headline {
+    margin: 0 auto 25px;
+    font-size: 25px;
+    text-align: center;
+
+    /* レスポンシブ for スマホ */
+    @media screen and (max-width: 520px) {
+        margin: 0 auto 12.5px;
+        font-size: 20px;
+    }
+
+    i {
+        padding-left: 5px;
+        color: darkorange;
+    }
+
+}
+
+
+/* 人気トピックエリア */
+.popular-topics-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto 80px;
+
+    /* レスポンシブ for タブレット and スマホ */
+    @media screen and (max-width: 960px) {
+        margin: 0 auto 40px;
+        width: 100%;
+        
+    }
+
+    form {
+        display: inline-block;
+        .popular-topic {
+            padding: 5px 10px;
+            margin: 5px 3px;
+            /* background: linear-gradient(to right, #348ac7, #7474bf); */
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            color: white;
+            border-radius: 20px;
+            border: none;
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                font-size: 10px;
+                padding: 2.5px 5px;
+                margin: 2.5px 1.5px;
+
+            }
+
+            i {
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+        }
+
+    }
+
+}
+
+/* 関連候補者ランキング見出し・関連発言ランキング見出し */
+.rel-candidate-ranking-headline, .rel-sentence-ranking-headline {
+    margin: 0 auto 25px;
+    font-size: 25px;
+    text-align: center;
+
+    /* レスポンシブ for スマホ */
+    @media screen and (max-width: 520px) {
+        margin: 0 auto 12.5px;
+        font-size: 20px;
+    }
+
+    i {
+        padding-left: 5px;
+        color: gold;
+    }
+
+}
+
+/* 関連候補者ランキングエリア・関連発言ランキングエリア */
+.rel-candidate-ranking-area, .rel-sentence-ranking-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto 80px;
+
+    /* レスポンシブ for スマホ */
+    @media screen and (max-width: 520px) {
+        width: 100%;
+        margin: 0 auto 40px;
+    }
+    
+    .rel-candidate, .rel-sentence {
+        display: flex;
+        margin: 10px auto;
+        padding: 10px 10px;
+        width: 100%;
+        height: 100px;
+        color: midnightblue;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 5px gray;
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            margin: 5px auto;
+            padding: 5px 5px;
+            width: 100%;
+            height: 80px;
+        }
+
+        .rank {
+            width: 10%;
+            height: 78px;
+            font-size: 1.7vw;
+            font-weight: bold;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+
+            /* レスポンシブ for スマホ */
+            @media screen and (max-width: 520px) {
+                height: 68px;
+            }
+
+            span {
+                position: absolute;
+                top: calc(39px - 0.85vw);
+                right: 0;
+                left: 0;
+
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    top: calc(34px - 0.85vw);
+                }
+            }
+        }
+
+        .person {
+            width: 30%;
+            position: relative;
+
+            .political-party {
+                width: 100%;
+                font-size: 1.2vw;
+                /* レスポンシブ for タブレット */
+                @media screen and (max-width: 960px) {
+                    font-size: 1.7vw;
+                }
+
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    font-size: 3vw;
+                }
+            }
+
+            .candidate-name {
+                display: block;
+                width: 100%;
+                font-size: 1.5vw;
+                text-align: center;
+                position: absolute;
+                top: calc(39px - 0.75vw);
+
+                /* レスポンシブ for タブレット */
+                @media screen and (max-width: 960px) {
+                    font-size: 2.5vw;
+                    top: calc(34px - 1.25vw);
+                }
+
+                /* レスポンシブ for スマホ */
+                @media screen and (max-width: 520px) {
+                    font-size: 4vw;
+                    top: calc(34px - 2vw);
+                }
+            }
+        }
+
+        .sentences {
+            width: 55%;
+            margin-left: 5%;
+            font-size: 1.3vw;
+
+            i {
+                margin-left: 3px;
+            }
+
+        }
+        .sentence {
+            width: 55%;
+            margin-left: 5%;
+            font-size: 1.3vw;
+            position: relative;
+
+            i {
+                margin-left: 3px;
+            }
+
+            a {
+                font-size: 1.3vw;
+                position: absolute;
+                top: calc(39px - 0.65vw);
+
+                /* レスポンシブ for スマホ　*/
+                @media screen and (max-width: 520px) {
+                    top: calc(34px - 0.65vw);
+                }
+            }
+
+        }
+
+    }
+
+}
