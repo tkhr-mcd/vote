@@ -1,5 +1,8 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
+
     <head>
         <!-- 各種メタ情報 -->
         <meta charset="utf-8">
@@ -10,11 +13,11 @@
         <!-- ページタイトル -->
         <title>選挙区選択</title>
         <!-- ファビコン -->
-        <link rel="icon" href="hand-peace-o.ico">
+        <link rel="icon" href="{% static 'vote/image/hand-peace-o.ico' %}">
         <!-- CSSファイル読み込み -->
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="common.css">
-        <link rel="stylesheet" href="electoral_district.css">
+        <link rel="stylesheet" href="{% static 'vote/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/electoral_district.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
     </head>
@@ -23,7 +26,7 @@
         <header>
             <div class="header-content-area">
                 <div class="header-logo">
-                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}"><span>Vote</span></a>
                 </div>
             </div>
         </header>
@@ -51,19 +54,9 @@
                 </ul>
 
                 <!-- 選挙区一覧 -->
-
-
-                <!-- <div class = 'container'>
-                    {% for item in object_list %}
-                    <div class="alert alert-success" role="alert">
-                       <p><a href="{% url 'vote:index' %}">第{{item.constituency}}区</a></p>
-                    </div>
-                    {% endfor %}
-                </div> -->
-                
                 <div class="electoral-district-area">
                     {% for item in constituency_list %}
-                       <p><a href="{% url 'vote:candidate' prefecture=item.prefecture constituency=item.constituency %}">第{{item.constituency}}区</a></p>
+                       <a href="{% url 'vote:candidate' prefecture=item.prefecture constituency=item.constituency %}">第{{item.constituency}}区</a>
                     {% endfor %}
 
                     <!-- <a href="{% url 'vote:index' %}">第1区</a>
@@ -92,6 +85,6 @@
         </footer>
 
     <!-- JavaScriptファイル読み込み -->
-    <script src="animation.js"></script>
+    <script src="{% static 'vote/js/animation.js' %}"></script>
     </body>
 </html>
