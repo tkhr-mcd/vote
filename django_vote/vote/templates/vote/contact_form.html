@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -10,20 +12,19 @@
         <!-- ページタイトル -->
         <title>お問い合わせフォーム</title>
         <!-- ファビコン -->
-        <link rel="icon" href="hand-peace-o.ico">
+        <link rel="icon" href="{% static 'vote/image/hand-peace-o.ico' %}">
         <!-- CSSファイル読み込み -->
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="common.css">
-        <link rel="stylesheet" href="contact_form.css">
+        <link rel="stylesheet" href="{% static 'vote/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/contact_form.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-
     </head>
     <body>
         <!-- ヘッダー -->
         <header>
             <div class="header-content-area">
                 <div class="header-logo">
-                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}"><span>Vote</span></a>
                 </div>
             </div>
         </header>
@@ -36,7 +37,7 @@
                     <span>(<span style="color:red;">*</span>は必須入力)</span>
                 </div>
                 <div class="contact-form">
-                    <form method="POST" action="{% url 'vote:' %}">
+                    <form method="POST" action="{% url 'vote:confirm' %}">{% csrf_token %}
                         <div class="user-name">
                             <div class="label">
                                 お名前
@@ -89,9 +90,9 @@
         <!-- フッター -->
         <footer>
             <div class="footer-content-area">
-                <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
-                <a href="{% url 'vote:' %}">お問い合わせ</a>
-                <a href="{% url 'vote:' %}">Twitter</a>
+                <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                <a href="{% url 'vote:contact' %}">お問い合わせ</a>
+                <a href="{% url 'vote:index' %}">Twitter</a>
             </div>
 
         </footer>

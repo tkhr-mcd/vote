@@ -11,6 +11,22 @@ from .models import Member ,Area
 def indexfunc(request):
     return render(request, 'index.html')
 
+def contactfunc(request):
+    return render(request, 'contact_form.html')   
+
+def confirmfunc(request):
+    username = request.POST['username']
+    email = request.POST['email']
+    subject = request.POST['subject']
+    details = request.POST['details']
+    return render(request, 'contact_confirm.html', {'username':username, 
+                                                    'email':email, 
+                                                    'subject':subject, 
+                                                    'details':details})  
+
+def completefunc(request):
+    return render(request, 'contact_complete.html') 
+
 def areafunc(request):
     object_list = Member.objects.all()
     return render(request, 'prefecture_page.html',{'object_list':object_list})
@@ -22,6 +38,7 @@ def constituencyfunc(request, prefecture):
 def candidatefunc(request, prefecture, constituency):
     candidate_list = Member.objects.filter(prefecture = prefecture, constituency = constituency)
     return render(request, 'candidate_list.html',{'candidate_list':candidate_list, 'prefecture':prefecture, 'constituency':constituency})
+
 
 
 def vote_new(request):
