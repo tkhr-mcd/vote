@@ -16,7 +16,7 @@
         <!-- CSSファイル読み込み -->
         <link rel="stylesheet" href="{% static 'vote/css/reset.css' %}">
         <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
-        <link rel="stylesheet" href="{% static 'vote/css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/candidate_list.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
     </head>
@@ -25,7 +25,7 @@
         <header>
             <div class="header-content-area">
                 <div class="header-logo">
-                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="hand-peace-o.png"><span>Vote</span></a>
+                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}"><span>Vote</span></a>
                 </div>
             </div>
         </header>
@@ -56,10 +56,10 @@
 
                 検索フォームエリア
                 <div class="search-form-area">
-                    <form method="get" action="{% url 'vote:' %}">
+                    <form method="get" action="{% url 'vote:index' %}">
                         <input class="keyword-search" type="text" name="keyword" size="25" placeholder="キーワード検索">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
@@ -68,74 +68,75 @@
 
                 <!-- 人気トピックエリア -->
                 <div class="popular-topics-area">
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="学費">学費<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="年金">年金<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="子育て">子育て<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="デジタルトランスフォーメーション">デジタルトランスフォーメーション<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="5G・IoT">5G・IoT<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="SDGs">SDGs<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="税金">税金<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="農業・産業">農業・産業<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="外国人労働者">外国人労働者<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="ベーシックインカム">ベーシックインカム<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="コロナ感染対策">コロナ感染対策<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="外交・安全保障">外交・安全保障<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="エネルギー政策">エネルギー政策<i class="fas fa-arrow-right"></i></button>
                     </form>
-                    <form method="get" action="{% url 'vote:' %}">
-                        <input type="hidden" name="prefecture" value="{{ }}">
-                        <input type="hidden" name="electoral_district" value="{{ }}">
+                    <form method="get" action="{% url 'vote:index' %}">
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
                         <button class="popular-topic" type="submit" name="topic" value="社会保障">社会保障<i class="fas fa-arrow-right"></i></button>
                     </form>
                 </div>
@@ -144,11 +145,12 @@
                 <h3 class="candidate-headline">候補者一覧<i class="fas fa-poll"></i></h3>
                 <!-- 候補者エリア -->
                 <div class="candidate-area">
+                    {% for candidate in candidate_list %}
                     <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">NHKと裁判してる党弁護士法72条違反で</p>
-                        <h3 class="candidate-name">田中 健田中 健田中 健田中 健田中 健田中 健田中 健田中 健</h3>
+                        <p class="political-party">{{candidate.party}}</p>
+                        <h3 class="candidate-name">{{candidate.name}}</h3>
                     </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
+                    <!-- <a class="candidate" href="{% url 'vote:index' %}">
                         <p class="political-party">政権交代によるコロナ対策強化新党</p>
                         <h3 class="candidate-name">橋本浩二</h3>
                     </a>
@@ -195,7 +197,8 @@
                     <a class="candidate" href="{% url 'vote:index' %}">
                         <p class="political-party">xxxx党</p>
                         <h3 class="candidate-name">********</h3>
-                    </a>
+                    </a> -->
+                    {% endfor %}
                 </div>
 
 

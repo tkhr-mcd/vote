@@ -21,7 +21,7 @@ def constituencyfunc(request, prefecture):
 
 def candidatefunc(request, prefecture, constituency):
     candidate_list = Member.objects.filter(prefecture = prefecture, constituency = constituency)
-    return render(request, 'test.html',{'candidate_list':candidate_list})
+    return render(request, 'candidate_list.html',{'candidate_list':candidate_list, 'prefecture':prefecture, 'constituency':constituency})
 
 
 def vote_new(request):
