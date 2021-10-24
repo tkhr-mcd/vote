@@ -25,7 +25,7 @@
         <header>
             <div class="header-content-area">
                 <div class="header-logo">
-                    <a href="{% url 'vote:vote_new' %}"><img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}"><span>Vote</span></a>
+                    <a href="{% url 'vote:index' %}"><img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}"><span>Vote</span></a>
                 </div>
             </div>
         </header>
@@ -209,7 +209,7 @@
         <footer>
             <div class="footer-content-area">
                 <a href="{% url 'vote:vote_new' %}"><i class="fas fa-hand-peace"></i>vote</a>
-                <a href="{% url 'vote:index' %}">お問い合わせ</a>
+                <a href="{% url 'vote:contact' %}">お問い合わせ</a>
                 <a href="{% url 'vote:index' %}">Twitter</a>
             </div>
 
