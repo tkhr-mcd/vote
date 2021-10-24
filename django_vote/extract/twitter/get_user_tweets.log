@@ -1,0 +1,422 @@
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+
+ETO_Akinoriiiiiiiiiii does not exist
+Traceback (most recent call last):
+  File "/Users/mochidatakahiro/dev/django/twitter/get_user_tweets.py", line 79, in get_user_tweets
+    results = api.user_timeline(screen_name=account, count=200, page=page)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 33, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 46, in wrapper
+    return method(*args, **kwargs)
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 571, in user_timeline
+    return self.request(
+  File "/Users/mochidatakahiro/.pyenv/versions/3.9.0/lib/python3.9/site-packages/tweepy/api.py", line 261, in request
+    raise NotFound(resp)
+tweepy.errors.NotFound: 404 Not Found
+34 - Sorry, that page does not exist.
+INFO 2021-10-24 15:30:34,175 [__main__.get_user_tweets] start : get_user_tweets(csv_filepath)
+INFO 2021-10-24 15:36:23,158 [__main__.get_user_tweets] normal end : get_user_tweets(/Users/mochidatakahiro/dev/django/vote/django_vote/data/twitter/2021-10-24_all_congress_info.csv)の処理が正常終了しました。
