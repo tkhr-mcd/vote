@@ -15,15 +15,16 @@
         <!-- ページタイトル -->
         <title>Vote</title>
         <!-- ファビコン -->
-        <link rel="icon" href="hand-peace-o.ico">
+        <link rel="icon" href="{% static 'vote/image/hand-peace-o.ico' %}">
         <!-- CSSファイル読み込み -->
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="common.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="{% static 'vote/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/index.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
     </head>
     <body>
+        {% load static %}
         <!-- ヘッダー -->
         <header>
             <div class="header-content-area">
@@ -44,7 +45,7 @@
                         <p><i class="far fa-check-circle"></i><span>あなたの投票をよりスムーズに、より効率的に行えるようにサポートします</span></p>
                     </div>
 
-                    <img class="catchphrase-image" src="{% static 'vote_image.png' %}">
+                    <img class="catchphrase-image" src="{% static 'vote/image/vote_image.png' %}">
                     <a class="startup-button" href="{% url 'vote:area' %}">はじめる<span class="right-arrow">→</span></a>
 
                 </div>
@@ -55,7 +56,7 @@
                             <span>STEP.1</span>
                             <h3 class="step1 js-scrollAnimation">都道府県を選択</h3>
                             <div class="howto-image">
-                                <img class="step1 js-scrollAnimation" src="prefecture.png">
+                                <img class="step1 js-scrollAnimation" src="{% static 'vote/image/prefecture.png' %}">
                             </div>
                         </div>
                         <div class="arrow-area">
@@ -65,7 +66,7 @@
                             <span>STEP.2</span>
                             <h3 class="step2 js-scrollAnimation">選挙区を選択</h3>
                             <div class="howto-image">
-                                <img class="step2 js-scrollAnimation" src="electoral_area.png">
+                                <img class="step2 js-scrollAnimation" src=" {% static 'vote/image/electoral_area.png' %}">
                             </div>
                         </div>
                         <div class="arrow-area">
@@ -75,14 +76,14 @@
                             <span>STEP.3</span>
                             <h3 class="step3 js-scrollAnimation">候補者を選択</h3>
                             <div class="howto-image">
-                                <img class="step3 js-scrollAnimation" src="politician.png">
+                                <img class="step3 js-scrollAnimation" src="{% static 'vote/image/politician.png' %}">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="lets-start-area">
                     <div class="lets-start">
-                        <img class="fas fa-hand-peace" src="hand-peace-o.png">
+                        <img class="fas fa-hand-peace" src="{% static 'vote/image/hand-peace-o.png' %}">
                         <h3>Let's start.</h3>
                         <a class="startup-button" href="{% url 'vote:area' %}">はじめる<span class="right-arrow">→</span></a>
                     </div>
@@ -102,6 +103,6 @@
         </footer>
 
     <!-- JavaScriptファイル読み込み -->
-    <script src="animation.js"></script>
+    <script src="{% static 'vote/js/animation.js' %}"></script>
     </body>
 </html>

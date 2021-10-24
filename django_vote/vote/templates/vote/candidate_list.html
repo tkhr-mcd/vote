@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -10,11 +12,11 @@
         <!-- ページタイトル -->
         <title>候補者一覧</title>
         <!-- ファビコン -->
-        <link rel="icon" href="hand-peace-o.ico">
+        <link rel="icon" href="{% static 'vote/image/hand-peace-o.ico' %}">
         <!-- CSSファイル読み込み -->
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="common.css">
-        <link rel="stylesheet" href="candidate_list.css">
+        <link rel="stylesheet" href="{% static 'vote/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
+        <link rel="stylesheet" href="{% static 'vote/css/index.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
     </head>
@@ -211,6 +213,6 @@
         </footer>
 
     <!-- JavaScriptファイル読み込み -->
-    <script src="animation.js"></script>
+    <script src="{% static 'vote/js/animation.js' %}"></script>
     </body>
 </html>
