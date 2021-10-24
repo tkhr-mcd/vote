@@ -5194,3 +5194,27 @@ INFO 2021-10-24 11:42:43,023 [__main__.extract_all_congress] start : extract_con
 ERROR 2021-10-24 11:42:43,026 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
 INFO 2021-10-24 11:44:19,644 [__main__.extract_all_congress] start : extract_congress()
 INFO 2021-10-24 11:47:48,538 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-24 17:48:16,629 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 17:48:58,980 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 17:50:40,962 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 17:50:43,589 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:08:13,164 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 18:08:13,177 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:09:30,424 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 18:14:17,860 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:16:41,335 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 18:16:51,832 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:17:49,579 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-24 18:22:51,301 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-24 18:36:08,421 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 18:36:11,239 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:36:50,544 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 18:36:56,283 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 18:37:30,168 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-24 18:42:33,816 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-24 20:09:26,034 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-24 20:09:26,352 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-24 20:14:52,504 [__main__.extract_all_congress] start : extract_congress()
+ERROR 2021-10-24 20:19:36,691 [__main__.extract_all_congress] abnormal end : extract_congress()の処理が異常終了しました。
+INFO 2021-10-24 20:20:07,926 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-24 20:25:06,298 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。

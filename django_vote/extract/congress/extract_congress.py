@@ -5,12 +5,12 @@ import os
 import sys
 import re
 import time
+import datetime
 import glob
 import logging
 import traceback
 import pandas as pd
 import numpy as np
-from datetime import date
 from pathlib import Path
 
 def scrape_congress(filename, name):
@@ -54,9 +54,6 @@ def scrape_congress(filename, name):
                                                                            # + '&until=' + enddate)
         obj = untangle.parse(url)
         art = obj.data.numberOfRecords.cdata
-        # 以下ロジックにtry句を入れてエラーハンドリングできるようにする
-        # 期間中に発言がない議員の場合はエラーがでてしまうので
-        # エラー議員名とエラー内容がlogに保存できるようにする
         for record in obj.data.records.record:
             name = record.recordData.speechRecord.speaker.cdata
             if name == '' or name in chairs:    #発言者なしor議長の場合はパス
@@ -109,10 +106,10 @@ def read_congress_words(path):
     stop_words = [ '　', '\n', '（拍手）', '―――――――――――――', '――――◇―――――', '、', '─', '—', '（内閣提出）', '・', '「', '」', '（', '）']
 
     path = str(path.resolve())
-
+    splited_path = path.split('/')
+    text_filename = splited_path[-1]
     # 議員名をパスから取り出しています
-    name = path[11:]
-    name = name[:-4]
+    name = text_filename[6:-4]
 
     #stop_wordsをテキストから削除しています
     prime_minister = '○内閣総理大臣{}君'.format(name)
@@ -124,7 +121,8 @@ def read_congress_words(path):
         text = text.replace(word, '')
 
     # 正規表現に合致した文字を削除する
-    stop_words = ['\d{4}-\d{2}-\d{2}', '〔[一-龥ぁ-んァ-ン]+〕']
+    # 発言者部分を削除しています
+    stop_words = ['〔[一-龥ぁ-んァ-ン]+〕'] 
     for word in stop_words:
         text = re.sub(word, '', text)
     return text, name
@@ -158,10 +156,9 @@ def extract_all_congress():
     logger.info(rf'start : extract_congress()')
     try:
         house_member = pd.read_excel(this_file_path.parent / '議員一覧.xlsx', sheet_name='衆議院')
-
         member_files_path = []
         for name in house_member['氏名']:
-            path =this_file_path.parent / f'congress_words/words_{name}.txt'
+            path =this_file_path.parent.parent / 'data' / 'congress'/  'all_congress_words'/ f'words_{name}.txt'
             member_files_path.append(path)
             f = open(path, 'w')
             f.close()
@@ -179,30 +176,27 @@ def extract_all_congress():
                 pass
             time.sleep(60)
             print(f'{name}の発言を抽出しました。')
-
         # 議員の発言をラベルとして1文ずつ抽出しデータフレーム化
-        parent_dir = this_file_path.parent.resolve()
-        member_files = list(this_file_path.parent.glob('congress_words/*.txt'))
-
-        # パスの順番に衆議院議員の名前をリスト化
-        # member_names = []
-        # for member_file in member_files:
-        #     member_file = str(member_file).split(r'/')[-1]
-        #     # 11と-4はファイル名の名前部分のみを抽出するために指定しています
-        #     member_file = member_file[11:]
-        #     member_file = member_file[:-4]
-        #     member_names.append(member_file)
+        congress_words_dir = this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'
+        member_files = list(congress_words_dir.glob('*.txt'))
 
         # 衆議院議員の発言を抽出してstop_wordsを削除してデータフレームに追加しています。
         df = pd.DataFrame({'name':[],
-                        'sentence':[]})
+                        'sentence':[],
+                        'comment':[],
+                        'comment_datetime':[]})
 
         for path in member_files:
             text, name = read_congress_words(path)
-            sentence_list = text.split('。')
-            for sentence in sentence_list:
-                series = pd.Series([name, sentence], index=df.columns)
-                df = df.append(series, ignore_index=True)
+            date_list = re.findall(r'\d{4}-\d{2}-\d{2}', text)
+            text_list = re.split(r'\d{4}-\d{2}-\d{2}', text)
+            # テキストリストは最初の文字が日付となり最初は空欄のみになるため
+            text_list = text_list[1:]
+            for comment, date in zip(text_list, date_list):
+                sentence_list = comment.split('。')
+                for sentence in sentence_list:
+                    series = pd.Series([name, sentence, comment, date], index=df.columns)
+                    df = df.append(series, ignore_index=True)
         # 欠損処理
         df['sentence'] = df['sentence'].replace('', np.nan)
         df = df.dropna(subset=['sentence'])
@@ -211,9 +205,10 @@ def extract_all_congress():
         df = df.drop_duplicates()
 
         df = df.reset_index(drop=True)
-        today = date.today()
+        today = datetime.date.today()
+        all_congress_words_path = this_file_path.parent.parent.parent / 'data' / 'congress'/  f'{today}_house_member_words.csv'
         # csvデータとして衆議院議員の発言を出力しています
-        df.to_csv(this_file_path.parent / f'{today}_house_member_words.csv', index=False, encoding='utf_8_sig')
+        df.to_csv(all_congress_words_path, index=False, encoding='utf_8_sig')
         logger.info(rf'normal end : extract_congress()の処理が正常終了しました。')
     except:
         traceback.print_exc()
