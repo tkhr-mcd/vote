@@ -158,10 +158,11 @@ def extract_all_congress():
         house_member = pd.read_excel(this_file_path.parent / '議員一覧.xlsx', sheet_name='衆議院')
         member_files_path = []
         for name in house_member['氏名']:
-            path =this_file_path.parent.parent / 'data' / 'congress'/  'all_congress_words'/ f'words_{name}.txt'
+            path =this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'/ f'words_{name}.txt'
             member_files_path.append(path)
             f = open(path, 'w')
             f.close()
+            '''
             try:
                 r = scrape_congress(path, name)
             except:
@@ -176,6 +177,7 @@ def extract_all_congress():
                 pass
             time.sleep(60)
             print(f'{name}の発言を抽出しました。')
+            '''
         # 議員の発言をラベルとして1文ずつ抽出しデータフレーム化
         congress_words_dir = this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'
         member_files = list(congress_words_dir.glob('*.txt'))
