@@ -134,4 +134,4 @@ def get_user_tweets(csv_filepath):
 
 if __name__ == '__main__':
     csv_filepath = merge_candidate_list()
-    print(csv_filepath)
+    get_user_tweets(csv_filepath)
