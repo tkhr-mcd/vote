@@ -38,7 +38,7 @@ def get_words_similarity(search_words, comment_df):
     parent_dir_path = str(this_file_path.parent.parent.resolve())
 
     # 文書類似度の比較のためcomment_dfに検索ワードを追加しています
-    comment_df = comment_df.append({'member_id': '', 'sentence_id': '', 'sentence':search_words, 'comment_id': '', 'comment': '', 'comment_datetime': ''}, ignore_index=True)
+    comment_df = comment_df.append({'serial_id': '', 'name': '', 'sentence':search_words, 'comment': '', 'comment_datetime': ''}, ignore_index=True)
     # 形態素解析
     # Mecabで形態素解析
     mecab = MeCab.Tagger(f'-d {parent_dir_path}/mecab-ipadic-neologd')
@@ -81,13 +81,14 @@ def get_words_similarity(search_words, comment_df):
     candidate_topN = 10 
     df_list = []
     score_list = []
-    for _, sdf in sorted_df.groupby('member_id'):
+    for _, sdf in sorted_df.groupby('name'):
         sdf = sdf.reset_index(drop=True)
         candidate_score = float(sdf['sentences_similarity'].mean())
         score_list.append(candidate_score)
         df_list.append(sdf)
-    df_list = df_list[:-1]
-    score_list = score_list[:-1]
+    # 一番類似度が高い検索ワードがある行をスライスで削除しています
+    df_list = df_list[1:]
+    score_list = score_list[1:]
     tuple_list =[]
     for score_and_df in zip(score_list, df_list):
         tuple_list.append(score_and_df)
@@ -97,7 +98,6 @@ def get_words_similarity(search_words, comment_df):
     for score_and_df in tuple_list:
         # 一番上の発言のみ取得します
         candidate_df = pd.DataFrame(score_and_df[1].iloc[0, :]).T 
-        print(candidate_df.columns)
         candidate_df_list.append(pd.DataFrame(score_and_df[1].iloc[0, :]).T)
     candidate_rank = pd.concat(candidate_df_list, axis=0)
 
