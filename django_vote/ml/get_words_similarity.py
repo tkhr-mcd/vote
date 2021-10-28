@@ -80,10 +80,26 @@ def get_words_similarity(search_words, comment_df):
     # 候補者ごとの発言ランキングデータフレームを作成しています
     candidate_topN = 10 
     df_list = []
-    for _, sdf in sotted_df.groupby('member_id'):
-        sdf = sdf.iloc[1:sentences_topN+1, :]
+    score_list = []
+    for _, sdf in sorted_df.groupby('member_id'):
         sdf = sdf.reset_index(drop=True)
+        candidate_score = float(sdf['sentences_similarity'].mean())
+        score_list.append(candidate_score)
         df_list.append(sdf)
+    df_list = df_list[:-1]
+    score_list = score_list[:-1]
+    tuple_list =[]
+    for score_and_df in zip(score_list, df_list):
+        tuple_list.append(score_and_df)
+    # タプルの1つめ、類似度の平均値でリストをソートしています
+    tuple_list.sort(key=lambda x: x[0], reverse=True)
+    candidate_df_list = []
+    for score_and_df in tuple_list:
+        # 一番上の発言のみ取得します
+        candidate_df = pd.DataFrame(score_and_df[1].iloc[0, :]).T 
+        print(candidate_df.columns)
+        candidate_df_list.append(pd.DataFrame(score_and_df[1].iloc[0, :]).T)
+    candidate_rank = pd.concat(candidate_df_list, axis=0)
 
     # 発言ランキング作成
     # トップ5の類似度が高い発言を抽出します
@@ -95,6 +111,5 @@ def get_words_similarity(search_words, comment_df):
 if __name__ == '__main__':
     search_words = 'インボイス'
     comment_df = pd.read_csv('comment_df.csv')
-    similarited_comment = get_words_similarity(search_words, comment_df)
-    print(similarited_comment)
-    print(similarited_comment.columns)
+    candidate_rank, sentence_rank = get_words_similarity(search_words, comment_df)
+    print(candidate_rank)

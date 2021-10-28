@@ -103,8 +103,7 @@ def read_congress_words(path):
     f.close()
     
     # stop_wordsを指定
-    stop_words = [ '　', '\n', '（拍手）', '―――――――――――――', '――――◇―――――', '、', '─', '—', '（内閣提出）', '・', '「', '」', '（', '）']
-
+    stop_words = ['　', r'\n', r'\u3000','（拍手）', '―――――――――――――', '――――◇―――――', '、', '─', '—', '（内閣提出）', '・', '「', '」', '（', '）', '\n', '\u3000']
     path = str(path.resolve())
     splited_path = path.split('/')
     text_filename = splited_path[-1]
@@ -121,8 +120,8 @@ def read_congress_words(path):
         text = text.replace(word, '')
 
     # 正規表現に合致した文字を削除する
-    # 発言者部分を削除しています
-    stop_words = ['〔[一-龥ぁ-んァ-ン]+〕'] 
+    # パターンとしては順に議事最後の登壇などの状況説明文書、大臣の発言の議事最初のラベル、通常議員の発言の議事最初のラベル
+    stop_words = ['〔[一-龥ぁ-んァ-ン]+〕', '○([ぁ-んァ-ン一-龥]+)（([ぁ-んァ-ン一-龥]+)君）', '○([ぁ-んァ-ン一-龥]+)君']
     for word in stop_words:
         text = re.sub(word, '', text)
     return text, name
@@ -157,12 +156,12 @@ def extract_all_congress():
     try:
         house_member = pd.read_excel(this_file_path.parent / '議員一覧.xlsx', sheet_name='衆議院')
         member_files_path = []
+        '''
         for name in house_member['氏名']:
             path =this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'/ f'words_{name}.txt'
             member_files_path.append(path)
             f = open(path, 'w')
             f.close()
-            '''
             try:
                 r = scrape_congress(path, name)
             except:
@@ -177,11 +176,10 @@ def extract_all_congress():
                 pass
             time.sleep(60)
             print(f'{name}の発言を抽出しました。')
-            '''
+        '''
         # 議員の発言をラベルとして1文ずつ抽出しデータフレーム化
         congress_words_dir = this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'
         member_files = list(congress_words_dir.glob('*.txt'))
-
         # 衆議院議員の発言を抽出してstop_wordsを削除してデータフレームに追加しています。
         df = pd.DataFrame({'name':[],
                         'sentence':[],

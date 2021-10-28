@@ -8552,3 +8552,19 @@ Traceback (most recent call last):
     raise AttributeError(
 AttributeError: 'data' has no attribute 'records'
 INFO 2021-10-27 19:20:16,899 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-27 22:49:06,668 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-27 22:49:07,278 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-27 22:50:35,559 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-27 22:50:35,943 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-27 22:51:15,388 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-27 22:51:15,787 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-28 01:33:14,802 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-28 01:33:15,388 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-28 01:36:03,161 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-28 01:36:03,541 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-28 01:39:39,321 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-28 01:39:39,894 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-28 01:41:10,528 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-28 01:46:24,000 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
+INFO 2021-10-28 01:56:04,390 [__main__.extract_all_congress] start : extract_congress()
+INFO 2021-10-28 02:01:47,505 [__main__.extract_all_congress] normal end : extract_congress()の処理が正常終了しました。
