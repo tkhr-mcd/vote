@@ -23,15 +23,10 @@ def merge_candidate_list():
 
     '''
     this_file_path = Path(__file__)
-    parent_dir = this_file_path.parent.parent.parent.resolve()
+    parent_dir = this_file_path.parent.parent.parent 
     candidate_dir = parent_dir / 'candidate_list' 
     candidate_lists = list(candidate_dir.glob('候補者リスト_*.xlsx'))
     output_dir = parent_dir / 'data' / 'twitter' 
-    print(this_file_path)
-    print(parent_dir)
-    print(candidate_dir)
-    print(candidate_lists)
-    print(output_dir)
 
     excel_df_list = []
     for candidate_form_path in candidate_lists:
@@ -138,6 +133,5 @@ def get_user_tweets(csv_filepath):
         logger.error(rf'abnormal end : get_user_tweeets({csv_filepath})の処理が異常終了しました。')
 
 if __name__ == '__main__':
-    # merge_candidate_list()
     csv_filepath = merge_candidate_list()
     get_user_tweets(csv_filepath)

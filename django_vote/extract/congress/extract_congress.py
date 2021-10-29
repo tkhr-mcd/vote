@@ -41,7 +41,7 @@ def scrape_congress(filename, name):
     while True:
         name = name
         startdate = '2017-10-01'
-        #enddate = '2019-12-31'
+        enddate = '2019-09-30'
         # maxreco = '1000'
         meeting = '本会議'
         # search = '財務'
@@ -50,8 +50,8 @@ def scrape_congress(filename, name):
                                                                            + '&speaker=' + name
                                                                            # + '&any=' + search
                                                                            + '&nameOfMeeting=' + meeting
-                                                                           + '&from=' + startdate)
-                                                                           # + '&until=' + enddate)
+                                                                           + '&from=' + startdate
+                                                                           + '&until=' + enddate)
         obj = untangle.parse(url)
         art = obj.data.numberOfRecords.cdata
         for record in obj.data.records.record:
@@ -156,7 +156,6 @@ def extract_all_congress():
     try:
         house_member = pd.read_excel(this_file_path.parent / '議員一覧.xlsx', sheet_name='衆議院')
         member_files_path = []
-        '''
         for name in house_member['氏名']:
             path =this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'/ f'words_{name}.txt'
             member_files_path.append(path)
@@ -176,7 +175,6 @@ def extract_all_congress():
                 pass
             time.sleep(60)
             print(f'{name}の発言を抽出しました。')
-        '''
         # 議員の発言をラベルとして1文ずつ抽出しデータフレーム化
         congress_words_dir = this_file_path.parent.parent.parent / 'data' / 'congress'/  'all_congress_words'
         member_files = list(congress_words_dir.glob('*.txt'))
