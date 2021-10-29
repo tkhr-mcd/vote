@@ -3,7 +3,11 @@ from django.http import HttpResponse
 from vote.models import Vote
 from vote.forms import VoteForm
 from ml.get_words_similarity import get_words_similarity
-from .models import Member ,Area
+from .models import Member ,Area, Users, Inquiry, Comment
+from django_pandas.io import read_frame
+from django.db import connection
+import pandas as pd
+
 # import pandas as pd
 # import numpy as np
 
@@ -15,17 +19,52 @@ def contactfunc(request):
     return render(request, 'contact_form.html')   
 
 def confirmfunc(request):
-    username = request.POST['username']
-    email = request.POST['email']
-    subject = request.POST['subject']
-    details = request.POST['details']
+    username = request.POST.get('username')
+    email = request.POST.get('email')
+    subject = request.POST.get('subject')
+    details = request.POST.get('details')
+    Inquiry.objects.create(username = username,
+                           email = email,
+                           subject = subject, 
+                           details = details)
     return render(request, 'contact_confirm.html', {'username':username, 
                                                     'email':email, 
                                                     'subject':subject, 
                                                     'details':details})  
 
 def completefunc(request):
-    return render(request, 'contact_complete.html') 
+    return render(request, 'contact_complete.html')
+        
+def resultfunc(request):
+    topic = request.POST.get('topic')
+    prefecture = request.POST.get('prefecture')
+    constituency = request.POST.get('electoral_district')
+    #Userテーブルへの行動ログ保存
+    Users.objects.create(prefecture = prefecture,
+                                   constituency = constituency,
+                                   query = topic)
+    try:
+        # Commentテーブルにおける対象選挙区の候補者の抽出
+        candidates = Member.objects.filter(prefecture = prefecture, constituency = constituency)
+        candidate_list = Member.objects.filter(prefecture = prefecture, constituency = constituency).values_list('name', flat = True)
+        comments = Comment.objects.filter(name__in = [candidate_list])
+        comment_df = read_frame(comments, fieldnames=['name', 'sentence', 'comment', 'comment_datetime'])
+        member_df = read_frame(candidates, fieldnames=['name', 'party'])
+
+        # キーワードと候補者発言の類似度計算
+        candidate_rank, sentence_rank = get_words_similarity(topic, comment_df)
+        candidate_rank = pd.merge(candidate_rank, member_df)
+        sentence_rank = pd.merge(sentence_rank, member_df)
+        candidate_rank = pd.concat([member_df, candidate_rank])
+        candidate_rank = candidate_rank[['name', 'party', 'sentence']].drop_duplicates(subset = 'name').fillna('関連発言なし')
+        return render(request,'search_result.html',{'prefecture':prefecture, 
+                                                    'constituency':constituency,
+                                                    'topic':topic,
+                                                    'candidate_rank':candidate_rank,
+                                                    'sentence_rank':sentence_rank
+                                                   })
+    except ValueError:
+        return render(request, 'error.html')
 
 def areafunc(request):
     object_list = Member.objects.all()
@@ -61,8 +100,3 @@ def vote_detail(request, vote_id):
     
     return render(request, 'vote/vote_detail.html',
                     context)
-
-
-def testfunc(request):
-    object_list = Member.objects.all()
-    return render(request, 'test.html',{'object_list':object_list}) 
