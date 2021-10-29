@@ -45,19 +45,21 @@ footer {
   width: 100%;
 }
 footer .footer-content-area {
+  background-color: #232b33;
+}
+footer .footer-content-area .footer-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-color: #232b33;
 }
-footer .footer-content-area .fa-hand-peace {
+footer .footer-content-area .footer-menu .fa-hand-peace {
   display: inline-block;
   margin-right: 10px;
 }
-footer .footer-content-area a {
+footer .footer-content-area .footer-menu a {
   display: block;
   width: 33%;
   padding: 5vh 0;
@@ -67,7 +69,13 @@ footer .footer-content-area a {
   /* レスポンシブ for スマホ */
 }
 @media screen and (max-width: 520px) {
-  footer .footer-content-area a {
+  footer .footer-content-area .footer-menu a {
     font-size: 16px;
   }
+}
+footer .footer-content-area .annotation {
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  padding-bottom: 20px;
 }

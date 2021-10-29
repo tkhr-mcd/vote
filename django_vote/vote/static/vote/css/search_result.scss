@@ -129,6 +129,22 @@ main {
     width: 80%;
     margin: 0 auto;
 
+    /* 変更点 */
+    div {
+        margin: 0 auto;
+        width: 500px; 
+        font-size: 1.2vw;
+        text-align: center;
+        margin-bottom: 10px;
+
+        /* レスポンシブ for スマホ */
+        @media screen and (max-width: 520px) {
+            width: 80%;
+        }
+
+    }
+    /* ここまで */
+
     form {
         margin: 0 auto 40px;
         text-align: center;
@@ -281,7 +297,8 @@ main {
         margin: 10px auto;
         padding: 10px 10px;
         width: 100%;
-        height: 100px;
+        min-height: 100px; /* 変更点 */
+        height: auto;  /* 変更点 */
         color: midnightblue;
         border: 1px solid gray;
         box-sizing: border-box;
@@ -292,7 +309,8 @@ main {
             margin: 5px auto;
             padding: 5px 5px;
             width: 100%;
-            height: 80px;
+            min-height: 80px; /* 変更点 */
+            height: auto; /* 変更点 */
         }
 
         .rank {

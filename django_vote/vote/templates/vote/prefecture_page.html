@@ -6,7 +6,7 @@
         <!-- 各種メタ情報 -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="description" content="Voteとは選挙会場にいるあなたの手助けをするアプリです。あなたの投票をよりスムーズに、より効率的に行えるようにサポートします">
         <meta name="format-detection" content="telephone=no,address=no,email=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- ページタイトル -->
@@ -341,11 +341,18 @@
         <!-- フッター -->
         <footer>
             <div class="footer-content-area">
-                <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
-                <a href="{% url 'vote:contact' %}">お問い合わせ</a>
-                <a href="{% url 'vote:index' %}">Twitter</a>
+                <div class="footer-menu">
+                    <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                    <a href="{% url 'vote:contact' %}">お問い合わせ</a>
+                    <a href="{% url 'vote:index' %}">Twitter</a>
+                </div>
+                <!-- 変更点 -->
+                <div class="annotation">
+                    ※本サイト内で使用しているデータは『国立国会図書館 国会議事録検索システム』を通じて収集したデータ、ならびに
+                    各候補者のTwitterアカウントの直近3000件のツイートデータを使用しています。
+                </div>
+                <!-- ここまで -->
             </div>
-
         </footer>
 
     <!-- JavaScriptファイル読み込み -->

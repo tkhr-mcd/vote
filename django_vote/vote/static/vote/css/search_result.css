@@ -132,6 +132,21 @@ main {
 .search-form-area {
   width: 80%;
   margin: 0 auto;
+  /* 変更点 */
+  /* ここまで */
+}
+.search-form-area div {
+  margin: 0 auto;
+  width: 500px;
+  font-size: 1.2vw;
+  text-align: center;
+  margin-bottom: 10px;
+  /* レスポンシブ for スマホ */
+}
+@media screen and (max-width: 520px) {
+  .search-form-area div {
+    width: 80%;
+  }
 }
 .search-form-area form {
   margin: 0 auto 40px;
@@ -290,7 +305,10 @@ main {
   margin: 10px auto;
   padding: 10px 10px;
   width: 100%;
-  height: 100px;
+  min-height: 100px;
+  /* 変更点 */
+  height: auto;
+  /* 変更点 */
   color: midnightblue;
   border: 1px solid gray;
   -webkit-box-sizing: border-box;
@@ -304,7 +322,10 @@ main {
     margin: 5px auto;
     padding: 5px 5px;
     width: 100%;
-    height: 80px;
+    min-height: 80px;
+    /* 変更点 */
+    height: auto;
+    /* 変更点 */
   }
 }
 .rel-candidate-ranking-area .rel-candidate .rank, .rel-candidate-ranking-area .rel-sentence .rank, .rel-sentence-ranking-area .rel-candidate .rank, .rel-sentence-ranking-area .rel-sentence .rank {
