@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vote.models import Vote, Member, Comment, Image, User
+from vote.models import Vote, Member, Comment, Image, Users, Area, Inquiry
 # from import_export.resources import ModelResource
 # from import_export.admin import ImportMixin
 # from import_export.formats import base_formats
@@ -8,7 +8,9 @@ from vote.models import Vote, Member, Comment, Image, User
 # Register your models here.
 admin.site.register(Vote)
 admin.site.register(Member)
-admin.site.register(User)
+admin.site.register(Users)
 admin.site.register(Comment)
 admin.site.register(Image)
+admin.site.register(Area)
+admin.site.register(Inquiry)
 

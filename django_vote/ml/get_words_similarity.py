@@ -18,7 +18,6 @@ def get_words_similarity(search_words, comment_df):
     '''
     検索クエリの文字列と選挙区指定によってDBから得られたcomment_tableデータフレームを渡すと
     検索クエリの文字列と候補者の発言と比較して候補者ランキングと発言ランキングを返します
-
     parameters
     ----------
     search_words: str

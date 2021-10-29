@@ -10,12 +10,11 @@ class Vote(models.Model):
         return self.words
 
 class Comment(models.Model):
-    member_id = models.IntegerField(primary_key=True)
-    sentence_id = models.IntegerField(blank=True, null=True)
+    serial_id = models.AutoField(primary_key=True)
+    name = models.TextField(blank=True, null=True)
     sentence = models.TextField(blank=True, null=True)
-    comment_id = models.IntegerField(blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
-    comment_date = models.DateField(blank=True, null=True)
+    comment_datetime = models.DateField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -33,7 +32,7 @@ class Image(models.Model):
 
 class Member(models.Model):
     member_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=15, blank=True, null=True)
+    name = models.TextField(blank=True, null=True)
     party = models.CharField(max_length=15, blank=True, null=True)
     prefecture = models.CharField(max_length=15, blank=True, null=True)
     constituency = models.IntegerField(blank=True, null=True)
@@ -43,11 +42,28 @@ class Member(models.Model):
         managed = False
         db_table = 'member'
         
-class User(models.Model):
-    user_id = models.AutoField(primary_key = True)
-    constituency = models.CharField(max_length= 100)
-    query = models.TextField()
-    search_datetime = DateTimeField(auto_now_add = True)
+class Users(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    prefecture = models.CharField(max_length=100, blank=True, null=True)
+    constituency = models.IntegerField(blank=True, null=True)
+    query = models.TextField(blank=True, null=True)
+    search_datetime = models.DateTimeField(auto_now_add = True)
+
+    class Meta:
+        managed = False
+        db_table = 'users'
+
+class Inquiry(models.Model):
+    post_id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=100, blank=True, null=True)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    subject = models.CharField(max_length=100, blank=True, null=True)
+    details = models.TextField(blank=True, null=True)
+    posted_datetime = models.DateTimeField(auto_now_add = True)
+
+    class Meta:
+        managed = False
+        db_table = 'inquiry'
 
 class Area(models.Model):
     area_id = models.IntegerField(primary_key=True)
