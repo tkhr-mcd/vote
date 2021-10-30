@@ -146,58 +146,11 @@
                 <!-- 候補者エリア -->
                 <div class="candidate-area">
                     {% for candidate in candidate_list %}
-                    <a class="candidate" href="{% url 'vote:index' %}">
+                    <a class="candidate" href="{% url 'vote:summary' person_name=candidate.name %}">
                         <p class="political-party">{{candidate.party}}</p>
                         <h3 class="candidate-name">{{candidate.name}}</h3>
                     </a>
-                    <!-- <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">政権交代によるコロナ対策強化新党</p>
-                        <h3 class="candidate-name">橋本浩二</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">自民党</p>
-                        <h3 class="candidate-name">あいうえおかきくけこ</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a>
-                    <a class="candidate" href="{% url 'vote:index' %}">
-                        <p class="political-party">xxxx党</p>
-                        <h3 class="candidate-name">********</h3>
-                    </a> -->
+                    
                     {% endfor %}
                 </div>
 
