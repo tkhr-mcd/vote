@@ -35,6 +35,10 @@ def confirmfunc(request):
 def completefunc(request):
     return render(request, 'contact_complete.html')
         
+def summaryfunc(request,person_name):
+    url = 'vote/wordcloud/' + person_name + '_wordCloud.png'
+    return render(request,'wordcloud.html',{'name':person_name, 'url':url})
+
 def resultfunc(request):
     topic = request.POST.get('topic')
     prefecture = request.POST.get('prefecture')
@@ -55,13 +59,13 @@ def resultfunc(request):
         candidate_rank, sentence_rank = get_words_similarity(topic, comment_df)
         candidate_rank = pd.merge(candidate_rank, member_df)
         sentence_rank = pd.merge(sentence_rank, member_df)
-        candidate_rank = pd.concat([member_df, candidate_rank])
-        candidate_rank = candidate_rank[['name', 'party', 'sentence']].drop_duplicates(subset = 'name').fillna('関連発言なし')
+        candidate_rank = pd.concat([candidate_rank,member_df])[['name', 'party', 'sentence']].drop_duplicates(subset = 'name').fillna('関連発言なし').reset_index()
         return render(request,'search_result.html',{'prefecture':prefecture, 
                                                     'constituency':constituency,
                                                     'topic':topic,
                                                     'candidate_rank':candidate_rank,
-                                                    'sentence_rank':sentence_rank
+                                                    'sentence_rank':sentence_rank, 
+                                                    'candidates':candidates
                                                    })
     except ValueError:
         return render(request, 'error.html')

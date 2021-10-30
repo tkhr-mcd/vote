@@ -5,7 +5,7 @@
         <!-- 各種メタ情報 -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="サイト要約文をここに記述する。検索結果画面においてこの文が表示される">
+        <meta name="description" content="Voteとは選挙会場にいるあなたの手助けをするアプリです。あなたの投票をよりスムーズに、より効率的に行えるようにサポートします">
         <meta name="format-detection" content="telephone=no,address=no,email=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- ページタイトル -->
@@ -56,6 +56,7 @@
 
                 <!-- 検索フォームエリア -->
                 <div class="search-form-area">
+                    <div>検索キーワード : {{topic}}</div>
                     <form method="get" action="{% url 'vote:result' %}">
                         <input class="keyword-search" type="text" name="topic" size="25" placeholder="キーワード検索">
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
@@ -72,12 +73,7 @@
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
                         <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="学費">学費<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="年金">年金<i class="fas fa-arrow-right"></i></button>
+                        <button class="popular-topic" type="submit" name="topic" value="旅行・観光">旅行・観光<i class="fas fa-arrow-right"></i></button>
                     </form>
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
@@ -87,17 +83,57 @@
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
                         <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="デジタルトランスフォーメーション">デジタルトランスフォーメーション<i class="fas fa-arrow-right"></i></button>
+                        <button class="popular-topic" type="submit" name="topic" value="結婚">結婚<i class="fas fa-arrow-right"></i></button>
                     </form>
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
                         <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="5G・IoT">5G・IoT<i class="fas fa-arrow-right"></i></button>
+                        <button class="popular-topic" type="submit" name="topic" value="給与・所得">給与・所得<i class="fas fa-arrow-right"></i></button>
                     </form>
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
                         <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="SDGs">SDGs<i class="fas fa-arrow-right"></i></button>
+                        <button class="popular-topic" type="submit" name="topic" value="補助金・給付金">補助金・給付金<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="転職・就職">転職・就職<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="アニメ・鬼滅の刃">アニメ・鬼滅の刃<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="テクノロジー・IT">テクノロジー・IT<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="ふるさと納税">ふるさと納税<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="コロナ">コロナ<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="地震・震災">地震・震災<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="金融・銀行">金融・銀行<i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
+                        <input type="hidden" name="prefecture" value="{{prefecture}}">
+                        <input type="hidden" name="electoral_district" value="{{constituency}}">
+                        <button class="popular-topic" type="submit" name="topic" value="LGBT">LGBT<i class="fas fa-arrow-right"></i></button>
                     </form>
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
@@ -107,37 +143,7 @@
                     <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
                         <input type="hidden" name="prefecture" value="{{prefecture}}">
                         <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="農業・産業">農業・産業<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="外国人労働者">外国人労働者<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="ベーシックインカム">ベーシックインカム<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="コロナ感染対策">コロナ感染対策<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="外交・安全保障">外交・安全保障<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="エネルギー政策">エネルギー政策<i class="fas fa-arrow-right"></i></button>
-                    </form>
-                    <form method="POST" action="{% url 'vote:result' %}">{% csrf_token %}
-                        <input type="hidden" name="prefecture" value="{{prefecture}}">
-                        <input type="hidden" name="electoral_district" value="{{constituency}}">
-                        <button class="popular-topic" type="submit" name="topic" value="社会保障">社会保障<i class="fas fa-arrow-right"></i></button>
+                        <button class="popular-topic" type="submit" name="topic" value="年金">年金<i class="fas fa-arrow-right"></i></button>
                     </form>
                 </div>
                 
@@ -145,18 +151,25 @@
                 <h3 class="rel-candidate-ranking-headline">関連候補者ランキング<i class="fas fa-medal"></i></h3>
                 <!-- 関連候補者ランキングエリア -->
                 <div class="rel-candidate-ranking-area">
+                    
                     {% for index, row in candidate_rank.iterrows %}
                     <div class="rel-candidate" href="{% url 'vote:index' %}">
+                        
                         <p class="rank"><span>{{ index|add:1 }}位</span></p>
                         <div class="person">
                             <p class="political-party">{{ row.party }}</p>
                             <p class="candidate-name">{{ row.name }}</p>
+                            
+                            
                         </div>
                         <p class="sentences">
                             <span>関連発言一覧<i class="fas fa-comment-dots"></i></span><br>
                             『<span>{{ row.sentence }}</span>』
-                            <span>/</span>
+                            <br>
+                            <br>
+                            <a href="{% url 'vote:summary' person_name=row.name %}">候補者の全発言の要約</a>
                         </p>
+                        
                     </div>
                     {% endfor %}
                 </div>
@@ -185,6 +198,7 @@
         </main>
 
         <!-- フッター -->
+
         <footer>
             <div class="footer-content-area">
                 <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
@@ -192,6 +206,21 @@
                 <a href="{% url 'vote:index' %}">Twitter</a>
             </div>
 
+        </footer>
+        <footer>
+            <div class="footer-content-area">
+                <div class="footer-menu">
+                    <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
+                    <a href="{% url 'vote:contact' %}">お問い合わせ</a>
+                    <a href="{% url 'vote:index' %}">Twitter</a>
+                </div>
+                <!-- 変更点 -->
+                <div class="annotation">
+                    ※本サイト内で使用しているデータは『国立国会図書館 国会議事録検索システム』を通じて収集したデータ、ならびに
+                    各候補者のTwitterアカウントの直近3000件のツイートデータを使用しています。
+                </div>
+                <!-- ここまで -->
+            </div>
         </footer>
 
     <!-- JavaScriptファイル読み込み -->
