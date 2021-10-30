@@ -4,10 +4,11 @@ import datetime
 import copy
 import re
 from pathlib import Path
+from glob import glob
 from wordcloud import WordCloud
 import MeCab
 
-def make_wordcloud(tweets_csv_path, congress_csv_path):
+def make_wordcloud(tweets_csv_dir, congress_csv_dir):
     '''
     tweetのcsvファイルを渡すと各議員のワードクラウドのイメージファイルを出力する
     aws上ではなくローカルで実行するモジュールです
@@ -23,7 +24,7 @@ def make_wordcloud(tweets_csv_path, congress_csv_path):
     -------
     None
     '''    
-
+    
     this_file_path = Path(__file__)
     wordcloud_filepath  = this_file_path.parent.parent / 'vote' / 'static' / 'vote' / 'wordcloud'
     def preprocess(x):
@@ -41,9 +42,8 @@ def make_wordcloud(tweets_csv_path, congress_csv_path):
     congress_df = congress_df.rename(columns={'sentence': 'text', 'comment_datetime': 'created_at'})
     congress_df = congress_df.dropna(subset=['text'])
     df = pd.concat([tweets_df, congress_df], join='inner')
-    value_counts = df['name'].value_counts()
-    value_counts.to_csv('candidate_unique.csv', encoding='utf_8_sig')
     for name, sdf in df.groupby('name'):
+        print(name)
         sdf.reset_index(drop=True)
         texts = sdf['text']
         texts_merged = ''.join(texts)
@@ -62,7 +62,7 @@ def make_wordcloud(tweets_csv_path, congress_csv_path):
         word_chain = ' '.join(word_list)
         #wordCloudで表示する
         hiragana = ['こちら', 'これ', 'ありません', 'そこ', 'ところ', 'とき', 'それ', 'こと', 'もの', 'ため', 'の', 'よう', 'そう', 'さん', 'たび', 'たくさん', 'みなさん', 'さ', 'お互い', 'おはよう', 'お願い', 'こんばんは', 'かつ', 'ひと']
-        english = ['https', 'http','co', '@', 'RT', 't']
+        english = ['https', 'http','co', '@', 'RT', r't']
         kanji = ['等', '十', '九', '八', '七', '六', '五', '四', '三', '二', '一', '皆さん', '皆様', '本日', '衆議院選挙', '議員', '時間', '衆議院議員', '街頭演説', '選挙戦', '私', '応援', '今日', 'お願い', '大変', '本日', '現在']
         party = ['立憲民主党', '民主党', '自民党', '自由民主党', '共産党', '維新' '党']
         stop_words = hiragana + kanji + english + party
@@ -82,6 +82,6 @@ def make_wordcloud(tweets_csv_path, congress_csv_path):
 
 if __name__ == '__main__':
     this_file_path = Path(__file__)
-    tweets_csv_path = this_file_path.parent.parent / 'data' / 'twitter' / '2021-10-29_tweets_mochida.csv'
-    congress_csv_path = this_file_path.parent.parent / 'data' / 'congress' /  '2021-10-29_house_member_words.csv'
+    tweets_csv_path = this_file_path.parent.parent / 'data' / 'twitter' / 'all_tweets.csv'
+    congress_csv_path = this_file_path.parent.parent / 'data' / 'congress' /  'all_member_words.csv'
     make_wordcloud(tweets_csv_path, congress_csv_path)

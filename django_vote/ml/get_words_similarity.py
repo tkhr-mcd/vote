@@ -37,6 +37,8 @@ def get_words_similarity(search_words, comment_df):
     this_file_path = Path(__file__)
     parent_dir_path = str(this_file_path.parent.parent.resolve())
 
+    # レコメンドワードに「・」があるため置き換えています
+    search_words = search_words.replace('・', '')
     # 文書類似度の比較のためcomment_dfに検索ワードを追加しています
     comment_df = comment_df.append({'serial_id': '', 'name': '', 'sentence':search_words, 'comment': '', 'comment_datetime': ''}, ignore_index=True)
     # 形態素解析
