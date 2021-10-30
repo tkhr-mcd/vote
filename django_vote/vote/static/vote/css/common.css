@@ -78,4 +78,12 @@ footer .footer-content-area .annotation {
   font-size: 1vw;
   text-align: center;
   padding-bottom: 20px;
+  /* レスポンシブ for スマホ */
+}
+
+@media screen and (max-width: 520px) {
+  footer .footer-content-area .annotation {
+    text-align: left;
+    font-size: 10px;
+  }
 }
