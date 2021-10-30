@@ -28,7 +28,8 @@ def name_convert():
     df = df.dropna(subset=['sentence'])
     df = df.dropna(subset=['name'])
     df = df.replace({'name': {'あべ俊子':'阿部俊子',
-                     'あかま二郎':'赤間　二郎',
+                    'あかま二郎':'赤間二郎', 
+                    '\u3000':'', 
                      'うえの賢一郎':'上野賢一郎',
                      'とかしきなおみ':'渡嘉敷奈緒美',
                      '岡本あき子':'岡本章子', 

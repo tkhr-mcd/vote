@@ -21,7 +21,15 @@
         <link rel="stylesheet" href="{% static 'vote/css/common.css' %}">
         <link rel="stylesheet" href="{% static 'vote/css/index.css' %}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2WV0VGQ3M"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'G-G2WV0VGQ3M');
+        </script>
     </head>
     <body>
         {% load static %}
@@ -74,7 +82,7 @@
                         </div>
                         <div class="howto-step">
                             <span>STEP.3</span>
-                            <h3 class="step3 js-scrollAnimation">候補者を選択</h3>
+                            <h3 class="step3 js-scrollAnimation">キーワードを選択</h3>
                             <div class="howto-image">
                                 <img class="step3 js-scrollAnimation" src="{% static 'vote/image/politician.png' %}">
                             </div>
@@ -98,7 +106,7 @@
                 <div class="footer-menu">
                     <a href="{% url 'vote:index' %}"><i class="fas fa-hand-peace"></i>vote</a>
                     <a href="{% url 'vote:contact' %}">お問い合わせ</a>
-                    <a href="{% url 'vote:index' %}">Twitter</a>
+                    <a href="https://twitter.com/voteforxyztms">Twitter</a>
                 </div>
                 <!-- 変更点 -->
                 <div class="annotation">
