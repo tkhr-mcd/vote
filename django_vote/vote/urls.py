@@ -3,7 +3,7 @@ from .views import indexfunc, areafunc,constituencyfunc, vote_new, vote_detail, 
 
 app_name = 'vote'
 urlpatterns = [
-    path("vote/", indexfunc, name='index'),
+    path("", indexfunc, name='index'),
     path("contact/", contactfunc, name = 'contact'),
     path("confirm/", confirmfunc, name = 'confirm'),
     path("complete/", completefunc, name = 'complete'),

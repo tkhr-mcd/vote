@@ -127,6 +127,11 @@ main {
 .step-description li.selected {
   color: midnightblue;
 }
+@media screen and (max-width: 520px) {
+  .step-description li {
+    font-size: 12.5px;
+  }
+}
 
 /* 検索フォームエリア */
 .search-form-area {
@@ -331,6 +336,13 @@ main {
     font-size: 2vw;
   }
 }
+
+@media screen and (max-width: 520px) {
+  .candidate-area .candidate .political-party {
+    font-size: 14px;
+  }
+}
+
 .candidate-area .candidate .candidate-name {
   font-size: 1.5vw;
   text-align: center;
@@ -339,5 +351,11 @@ main {
 @media screen and (max-width: 960px) {
   .candidate-area .candidate .candidate-name {
     font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .candidate-area .candidate .candidate-name {
+    font-size: 18px;
   }
 }

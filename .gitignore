@@ -1,3 +1,5 @@
 django_vote/mecab-ipadic-neologd
 django_vote/data/congress/2021-10-24_house_member_words.csv
 django_vote/data/congress/2021-10-27_house_member_words.csv
+django_vote/django_vote/settings.py
+django_vote/django_vote/settings_local.py
