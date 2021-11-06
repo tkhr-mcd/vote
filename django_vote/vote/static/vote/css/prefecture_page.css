@@ -8,24 +8,16 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 body {
   font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", sans-serif;
-  font-size: 16px;
-  line-height: 1.5em;
-  color: #000000;
-  background-color: #ffffff;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #000000;
+	background-color: #ffffff;
 }
-
 
 .main-content-area {
     width: 100%;
     margin-top: 75px;
-    padding-top: 10vh;
-    padding-bottom: 20vh;
-}
-
-@media screen and (max-width: 520px) {
-  .main-content-area {
-    padding-bottom: 10vh;
-  }
+    padding: 10vh 0;
 }
 
 .main-content-area .progressbar-area {
@@ -116,11 +108,6 @@ body {
 
 .step-description li.selected {
     color: midnightblue;
-}
-@media screen and (max-width: 520px) {
-  .step-description li {
-    font-size: 12.5px;
-  }
 }
 
 

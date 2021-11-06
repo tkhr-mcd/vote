@@ -127,12 +127,6 @@ main {
 .step-description li.selected {
   color: midnightblue;
 }
-@media screen and (max-width: 520px) {
-  .step-description li {
-    font-size: 12.5px;
-
-  }
-}
 
 /* 検索フォームエリア */
 .search-form-area {
@@ -152,7 +146,6 @@ main {
 @media screen and (max-width: 520px) {
   .search-form-area div {
     width: 80%;
-    font-size: 4vw;
   }
 }
 .search-form-area form {
@@ -305,7 +298,7 @@ main {
     margin: 0 auto 40px;
   }
 }
-.rel-candidate-ranking-area .rel-candidate, .rel-sentence-ranking-area .rel-sentence {
+.rel-candidate-ranking-area .rel-candidate, .rel-candidate-ranking-area .rel-sentence, .rel-sentence-ranking-area .rel-candidate, .rel-sentence-ranking-area .rel-sentence {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,7 +318,7 @@ main {
   /* レスポンシブ for スマホ */
 }
 @media screen and (max-width: 520px) {
-  .rel-candidate-ranking-area .rel-candidate, .rel-sentence-ranking-area .rel-sentence {
+  .rel-candidate-ranking-area .rel-candidate, .rel-candidate-ranking-area .rel-sentence, .rel-sentence-ranking-area .rel-candidate, .rel-sentence-ranking-area .rel-sentence {
     margin: 5px auto;
     padding: 5px 5px;
     width: 100%;
@@ -335,7 +328,7 @@ main {
     /* 変更点 */
   }
 }
-.rel-candidate-ranking-area .rel-candidate .rank, .rel-sentence-ranking-area .rel-sentence .rank {
+.rel-candidate-ranking-area .rel-candidate .rank, .rel-candidate-ranking-area .rel-sentence .rank, .rel-sentence-ranking-area .rel-candidate .rank, .rel-sentence-ranking-area .rel-sentence .rank {
   width: 10%;
   height: 78px;
   font-size: 1.7vw;
@@ -349,7 +342,6 @@ main {
 @media screen and (max-width: 520px) {
   .rel-candidate-ranking-area .rel-candidate .rank, .rel-candidate-ranking-area .rel-sentence .rank, .rel-sentence-ranking-area .rel-candidate .rank, .rel-sentence-ranking-area .rel-sentence .rank {
     height: 68px;
-    font-size: 3vw;
   }
 }
 .rel-candidate-ranking-area .rel-candidate .rank span, .rel-candidate-ranking-area .rel-sentence .rank span, .rel-sentence-ranking-area .rel-candidate .rank span, .rel-sentence-ranking-area .rel-sentence .rank span {
@@ -361,7 +353,7 @@ main {
 }
 @media screen and (max-width: 520px) {
   .rel-candidate-ranking-area .rel-candidate .rank span, .rel-candidate-ranking-area .rel-sentence .rank span, .rel-sentence-ranking-area .rel-candidate .rank span, .rel-sentence-ranking-area .rel-sentence .rank span {
-    top: calc(34px - 1.5vw);
+    top: calc(34px - 0.85vw);
   }
 }
 .rel-candidate-ranking-area .rel-candidate .person, .rel-candidate-ranking-area .rel-sentence .person, .rel-sentence-ranking-area .rel-candidate .person, .rel-sentence-ranking-area .rel-sentence .person {
@@ -406,19 +398,31 @@ main {
     top: calc(34px - 2vw);
   }
 }
-.rel-candidate-ranking-area .rel-candidate .sentences, .rel-sentence-ranking-area .rel-sentence .sentence {
+.rel-candidate-ranking-area .rel-candidate .sentences, .rel-candidate-ranking-area .rel-sentence .sentences, .rel-sentence-ranking-area .rel-candidate .sentences, .rel-sentence-ranking-area .rel-sentence .sentences {
+  width: 55%;
+  margin-left: 5%;
+  font-size: 1.3vw;
+}
+.rel-candidate-ranking-area .rel-candidate .sentences i, .rel-candidate-ranking-area .rel-sentence .sentences i, .rel-sentence-ranking-area .rel-candidate .sentences i, .rel-sentence-ranking-area .rel-sentence .sentences i {
+  margin-left: 3px;
+}
+.rel-candidate-ranking-area .rel-candidate .sentence, .rel-candidate-ranking-area .rel-sentence .sentence, .rel-sentence-ranking-area .rel-candidate .sentence, .rel-sentence-ranking-area .rel-sentence .sentence {
   width: 55%;
   margin-left: 5%;
   font-size: 1.3vw;
   position: relative;
 }
-@media screen and (max-width: 520px) {
-  .rel-candidate-ranking-area .rel-candidate .sentences, .rel-sentence-ranking-area .rel-sentence .sentence {
-    font-size: 4vw;
-  }
-}
-
-.rel-candidate-ranking-area .rel-candidate .sentences i, .rel-sentence-ranking-area .rel-sentence .sentence i {
+.rel-candidate-ranking-area .rel-candidate .sentence i, .rel-candidate-ranking-area .rel-sentence .sentence i, .rel-sentence-ranking-area .rel-candidate .sentence i, .rel-sentence-ranking-area .rel-sentence .sentence i {
   margin-left: 3px;
 }
-
+.rel-candidate-ranking-area .rel-candidate .sentence a, .rel-candidate-ranking-area .rel-sentence .sentence a, .rel-sentence-ranking-area .rel-candidate .sentence a, .rel-sentence-ranking-area .rel-sentence .sentence a {
+  font-size: 1.3vw;
+  position: absolute;
+  top: calc(39px - 0.65vw);
+  /* レスポンシブ for スマホ　*/
+}
+@media screen and (max-width: 520px) {
+  .rel-candidate-ranking-area .rel-candidate .sentence a, .rel-candidate-ranking-area .rel-sentence .sentence a, .rel-sentence-ranking-area .rel-candidate .sentence a, .rel-sentence-ranking-area .rel-sentence .sentence a {
+    top: calc(34px - 0.65vw);
+  }
+}

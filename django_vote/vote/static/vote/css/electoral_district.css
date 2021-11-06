@@ -123,12 +123,6 @@ main {
 .main-content-area .step-description li.selected {
   color: midnightblue;
 }
-@media screen and (max-width: 520px) {
-  .main-content-area .step-description li {
-    font-size: 12.5px;
-  }
-}
-
 .main-content-area .electoral-district-area {
   display: -webkit-box;
   display: -ms-flexbox;
