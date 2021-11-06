@@ -14,6 +14,10 @@ def _get_cosine_similarity(x, y):
     # sp.distance.cosine(x, y)の返り値はcosine距離
     return 1- sp.distance.cosine(x, y)
 
+def remove_URL(x):
+    x = re.sub(r"http\S+", "", x)
+    return x
+
 def get_words_similarity(search_words, comment_df):
     '''
     検索クエリの文字列と選挙区指定によってDBから得られたcomment_tableデータフレームを渡すと
@@ -39,6 +43,10 @@ def get_words_similarity(search_words, comment_df):
 
     # レコメンドワードに「・」があるため置き換えています
     search_words = search_words.replace('・', '')
+    # 重複削除
+    comment_df = comment_df.drop_duplicates()
+    # URLを削除
+    comment_df['sentence'] = comment_df['sentence'].apply(remove_URL)
     # 文書類似度の比較のためcomment_dfに検索ワードを追加しています
     comment_df = comment_df.append({'serial_id': '', 'name': '', 'sentence':search_words, 'comment': '', 'comment_datetime': ''}, ignore_index=True)
     # 形態素解析
@@ -80,7 +88,7 @@ def get_words_similarity(search_words, comment_df):
 
     # 候補者ランキング作成
     # 候補者ごとの発言ランキングデータフレームを作成しています
-    candidate_topN = 10 
+    candidate_topN = 5 
     df_list = []
     score_list = []
     for _, sdf in sorted_df.groupby('name'):
