@@ -92,6 +92,9 @@ def get_words_similarity(search_words, comment_df):
     sorted_df['sentences_similarity'] = sorted_df['sentences_similarity'] * 100
     sorted_df['sentences_similarity'] = sorted_df['sentences_similarity'].round(2)
 
+    # PoCで算出した類似度のしきい値7.4を下回る関連語は削除する
+    sorted_df = sorted_df[sorted_df['sentences_similarity']>=7.4]
+
     # 候補者ランキング作成
     # 候補者ごとの発言ランキングデータフレームを作成しています
     candidate_topN = 5 
@@ -108,7 +111,6 @@ def get_words_similarity(search_words, comment_df):
     score_list = score_list[1:]
     tuple_list =[]
     for score_and_df in zip(score_list, df_list):
-        print(score_and_df)
         tuple_list.append(score_and_df)
     # タプルの1つめ、類似度の平均値でリストをソートしています
     tuple_list.sort(key=lambda x: x[0], reverse=True)
@@ -116,7 +118,6 @@ def get_words_similarity(search_words, comment_df):
     for score_and_df in tuple_list:
         # 一番上の発言のみ取得します
         candidate_df = pd.DataFrame(score_and_df[1].iloc[0, :]).T 
-        print(candidate_df)
         candidate_df_list.append(pd.DataFrame(score_and_df[1].iloc[0, :]).T)
     candidate_rank = pd.concat(candidate_df_list, axis=0)
 
@@ -129,10 +130,8 @@ def get_words_similarity(search_words, comment_df):
 
 if __name__ == '__main__':
     search_words = 'アニメ・鬼滅の刃'
-    comment_df = pd.read_csv('all_candidate_comments.csv')
-    comment_df = comment_df.drop('Unnamed: 0', axis=1)
-    tokyo01_neme_list = ['山田美樹', '海江田万里', '小野泰輔', '内藤久遠']
-    comment_df = comment_df[(comment_df['name']=='山田美樹') | (comment_df['name']=='海江田万里') | (comment_df['name']=='小野泰輔') | (comment_df['name']=='内藤久遠')]
+    comment_df = pd.read_csv('tokyo1to10_comment.csv')
+    # comment_df = comment_df.drop('Unnamed: 0', axis=1)
     candidate_rank, sentence_rank = get_words_similarity(search_words, comment_df)
     print(candidate_rank)
     print(sentence_rank)
