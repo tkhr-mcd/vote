@@ -118,7 +118,7 @@ def get_words_similarity(search_words, comment_df):
     for score_and_df in tuple_list:
         # 一番上の発言のみ取得します
         candidate_df = pd.DataFrame(score_and_df[1].iloc[0, :]).T 
-        candidate_df_list.append(pd.DataFrame(score_and_df[1].iloc[0, :]).T)
+        candidate_df_list.append(candidate_df)
     candidate_rank = pd.concat(candidate_df_list, axis=0)
 
     # 発言ランキング作成
@@ -131,7 +131,10 @@ def get_words_similarity(search_words, comment_df):
 if __name__ == '__main__':
     search_words = 'アニメ・鬼滅の刃'
     comment_df = pd.read_csv('tokyo1to10_comment.csv')
+    comment_df = comment_df[comment_df['district']==10]
     # comment_df = comment_df.drop('Unnamed: 0', axis=1)
     candidate_rank, sentence_rank = get_words_similarity(search_words, comment_df)
-    print(candidate_rank)
-    print(sentence_rank)
+    print(candidate_rank['comment'])
+    print(candidate_rank.shape)
+    print(sentence_rank['comment'])
+    print(sentence_rank.shape)
