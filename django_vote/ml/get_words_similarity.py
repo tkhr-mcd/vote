@@ -8,6 +8,10 @@ import MeCab
 # from janome.tokenizer import Tokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+this_file_path = Path(__file__)
+parent_dir_path = str(this_file_path.parent.parent.resolve())
+# Mecabで形態素解析を行うため関数の前に定義
+mecab = MeCab.Tagger(f'-d {parent_dir_path}/mecab-ipadic-neologd')
 
 def _get_cosine_similarity(x, y):
     # cosine類似度　= 1 - cosine距離
@@ -41,10 +45,6 @@ def get_words_similarity(search_words, comment_df):
     sentence_rank: pd.DataFrame
         search_result.htmlの発言ランキングで表示させたい発言ランキングのデータフレームです
     '''
-
-    this_file_path = Path(__file__)
-    parent_dir_path = str(this_file_path.parent.parent.resolve())
-
     # レコメンドワードに「・」があるため置き換えています
     search_words = search_words.replace('・', '')
     # 重複削除
@@ -56,8 +56,6 @@ def get_words_similarity(search_words, comment_df):
     # 文書類似度の比較のためcomment_dfに検索ワードを追加しています
     comment_df = comment_df.append({'serial_id': '', 'name': '', 'sentence':search_words, 'comment': '', 'comment_datetime': ''}, ignore_index=True)
     # 形態素解析
-    # Mecabで形態素解析
-    mecab = MeCab.Tagger(f'-d {parent_dir_path}/mecab-ipadic-neologd')
 
     sentence_tokenized = []
     for sentence in comment_df['sentence']:
